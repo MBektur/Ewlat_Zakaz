@@ -1,12 +1,13 @@
 "use client";
 
-import { useRef, useSyncExternalStore } from "react";
+import { useRef, useState, useSyncExternalStore } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Autoplay, Keyboard, Navigation, Pagination } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "swiper/css";
 import { Book3D } from "@/components/book/Book3D";
+import { BookModal } from "@/components/book/BookModal";
 import { BookCaption } from "@/components/book/BookCaption";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
@@ -16,6 +17,8 @@ import { bookLabel, fill } from "@/lib/format";
 type Props = {
   books: CatalogBook[];
   setNames: Record<number, string>;
+  /** Set kimliği → setin tüm kitapları (pencerede küçük resim şeridi için). */
+  siblingsBySet: Record<number, CatalogBook[]>;
   locale: Locale;
   dir: "ltr" | "rtl";
   t: Dictionary["carousel"];
@@ -34,11 +37,12 @@ export function BookCarousel(props: Props) {
   return mounted ? <SwiperCarousel {...props} /> : <StaticRow {...props} />;
 }
 
-function Slide({ book, i, locale, catalogT, setNames }: { book: CatalogBook; i: number } & Pick<Props, "locale" | "catalogT" | "setNames">) {
+function Slide({ book, i, locale, catalogT, setNames, onOpen }: { book: CatalogBook; i: number; onOpen?: () => void } & Pick<Props, "locale" | "catalogT" | "setNames">) {
   const setLabel = book.setId ? setNames[book.setId] : null;
   const title = bookLabel(book, locale).title ?? [setLabel, fill(catalogT.volume, { n: book.position })].filter(Boolean).join(" · ");
   return (
-    <div className="flex h-full w-full flex-col rounded-3xl border border-line bg-surface p-3 shadow-soft">
+    <div className="relative flex h-full w-full flex-col rounded-3xl border border-line bg-surface p-3 shadow-soft">
+      {onOpen && <button type="button" onClick={onOpen} aria-label={`${catalogT.open}: ${title}`} className="absolute inset-0 z-10 cursor-zoom-in rounded-3xl" />}
       <div className="flex min-h-[236px] items-end justify-center px-2 pb-3 pt-6">
         <Book3D
           book={book}
@@ -75,7 +79,9 @@ function StaticRow({ books, locale, catalogT, setNames }: Props) {
   );
 }
 
-function SwiperCarousel({ books, locale, dir, t, catalogT, setNames }: Props) {
+function SwiperCarousel({ books, locale, dir, t, catalogT, setNames, siblingsBySet }: Props) {
+  const [openId, setOpenId] = useState<number | null>(null);
+  const openBook = openId != null ? Object.values(siblingsBySet).flat().find((b) => b.id === openId) ?? books.find((b) => b.id === openId) : undefined;
   const swiperRef = useRef<SwiperType | null>(null);
   const uid = "featured";
   // RTL'de "önceki" sağda, "sonraki" solda olur; ikonları da buna göre çevir
@@ -113,7 +119,7 @@ function SwiperCarousel({ books, locale, dir, t, catalogT, setNames }: Props) {
       >
         {books.map((book, i) => (
           <SwiperSlide key={book.id}>
-            <Slide book={book} i={i} locale={locale} catalogT={catalogT} setNames={setNames} />
+            <Slide book={book} i={i} locale={locale} catalogT={catalogT} setNames={setNames} onOpen={() => setOpenId(book.id)} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -136,6 +142,18 @@ function SwiperCarousel({ books, locale, dir, t, catalogT, setNames }: Props) {
         <NextIcon className="size-6" strokeWidth={2.4} />
       </button>
       <div id={`${uid}-pagination`} className="book-swiper-pagination !static mt-6 flex justify-center" />
+      {openBook && (
+        <BookModal
+          key={openBook.setId ?? "x"}
+          book={openBook}
+          siblings={(openBook.setId && siblingsBySet[openBook.setId]) || [openBook]}
+          setLabel={openBook.setId ? setNames[openBook.setId] : null}
+          locale={locale}
+          t={catalogT}
+          onSelect={setOpenId}
+          onClose={() => setOpenId(null)}
+        />
+      )}
     </div>
   );
 }

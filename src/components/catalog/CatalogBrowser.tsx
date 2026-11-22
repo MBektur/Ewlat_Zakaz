@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { Search, X } from "lucide-react";
 import { Book3D, bookSize } from "@/components/book/Book3D";
 import { BookCaption } from "@/components/book/BookCaption";
+import { BookModal } from "@/components/book/BookModal";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { bookLabel, fill, setName } from "@/lib/format";
@@ -42,6 +43,7 @@ export function CatalogBrowser({
 }: Props & { initialSet?: string; initialQuery?: string }) {
   const [activeSet, setActiveSet] = useState(initialSet);
   const [query, setQuery] = useState(initialQuery);
+  const [openId, setOpenId] = useState<number | null>(null);
 
   const booksById = useMemo(() => new Map(catalog.books.map((b) => [b.id, b])), [catalog.books]);
   const sets = useMemo(() => catalog.sets.filter((s) => s.bookIds.length > 0), [catalog.sets]);
@@ -79,11 +81,16 @@ export function CatalogBrowser({
   const total = groups.reduce((n, g) => n + g.books.length, 0);
   const filtered = !!activeSet || !!query.trim();
 
+  // Pencere: kitabın setindeki TÜM kitaplar gezilir (filtreden bağımsız)
+  const openBook = openId != null ? booksById.get(openId) : undefined;
+  const openSet = openBook ? catalog.sets.find((x) => x.id === openBook.setId) : undefined;
+  const openSiblings = openSet ? openSet.bookIds.map((id) => booksById.get(id)).filter((x): x is CatalogBook => !!x) : openBook ? [openBook] : [];
+
   return (
     <div>
       <div className="border-b border-line/70 pb-5">
-        <div className="flex flex-col gap-3 lg:flex-row lg:items-start">
-          <label className="relative block lg:w-80">
+        <div className="flex flex-col gap-4">
+          <label className="relative block w-full max-w-md">
             <span className="sr-only">{t.searchLabel}</span>
             <Search className="pointer-events-none absolute start-3.5 top-1/2 size-4 -translate-y-1/2 text-muted" />
             <input
@@ -97,7 +104,7 @@ export function CatalogBrowser({
               className="w-full rounded-full border border-line bg-surface py-2.5 pe-4 ps-10 text-ink outline-none transition placeholder:text-muted/80 focus:border-primary focus:ring-2 focus:ring-primary/15"
             />
           </label>
-          <div className="flex min-w-0 flex-wrap gap-2 lg:flex-1" role="group" aria-label={t.allSets}>
+          <div className="flex flex-wrap gap-2" role="group" aria-label={t.allSets}>
             {[{ slug: "", label: t.allSets, count: catalog.books.length }, ...sets.map((s) => ({ slug: s.slug, label: setName(s, locale), count: s.bookIds.length }))].map(
               (chip) => (
                 <button
@@ -155,9 +162,16 @@ export function CatalogBrowser({
                   )}
                 </h2>
               </div>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+              <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 lg:grid-cols-5">
                 {books.map((book) => (
-                  <li key={book.id} className="flex flex-col items-center gap-3">
+                  <li key={book.id} className="relative flex flex-col items-center rounded-2xl border border-line bg-surface px-2 pb-4 pt-4 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lift">
+                    {/* Tüm kartı kaplayan görünmez düğme: tıklayınca ayrıntı penceresi açılır */}
+                    <button
+                      type="button"
+                      onClick={() => setOpenId(book.id)}
+                      aria-label={`${t.open}: ${bookLabel(book, locale).title ?? `${label} · ${fill(t.volume, { n: book.position })}`}`}
+                      className="absolute inset-0 z-10 cursor-zoom-in rounded-2xl"
+                    />
                     <div className="flex items-end" style={{ minHeight: rowHeight(books) }}>
                       <Book3D
                         book={book}
@@ -167,19 +181,33 @@ export function CatalogBrowser({
                         placeholderLabel={t.placeholderBadge}
                       />
                     </div>
-                    <BookCaption
-                      book={book}
-                      locale={locale}
-                      untitled={t.untitled}
-                      volumeLabel={t.volume}
-                      placeholderBadge={t.placeholderBadge}
-                    />
+                    <div className="mt-3 w-full border-t border-line/70 pt-3">
+                      <BookCaption
+                        book={book}
+                        locale={locale}
+                        untitled={t.untitled}
+                        volumeLabel={t.volume}
+                        placeholderBadge={t.placeholderBadge}
+                      />
+                    </div>
                   </li>
                 ))}
               </ul>
             </section>
           ))}
         </div>
+      )}
+      {openBook && (
+        <BookModal
+          key={openSet?.id ?? "x"}
+          book={openBook}
+          siblings={openSiblings}
+          setLabel={openSet ? setName(openSet, locale) : null}
+          locale={locale}
+          t={t}
+          onSelect={setOpenId}
+          onClose={() => setOpenId(null)}
+        />
       )}
     </div>
   );

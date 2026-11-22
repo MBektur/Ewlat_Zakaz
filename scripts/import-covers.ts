@@ -4,22 +4,22 @@
  *   npx tsx scripts/import-covers.ts [kaynak-klasör]
  *
  * - Yalnızca UYGURCA kapakları alır (Türkçe baskı kapakları ve tanıtım görselleri kullanılmaz).
- * - Her kapağı sRGB'ye çevirir, en uzun kenarı 600 px'e küçültür, AVIF (kalite 38) olarak
+ * - Her kapağı sRGB'ye çevirir, en uzun kenarı 800 px'e küçültür, AVIF (kalite 45) olarak
  *   public/covers/<set>/<NN>.avif yazar. Oran korunur, 3D kitap bu orandan çizilir.
  * - PDF kapaklarını (atlaslar, Doppa Diyarı) ghostscript ile görsele çevirip ön kapağı kırpar.
  * - Sonucu src/data/catalog.generated.json dosyasına yazar (db:seed ve önizleme modu bunu kullanır).
  * Liste, Ewlat Yayınları ilanındaki 154 kitaplık dökümdür (145 seri + 3 atlas + 6 tekil kitap).
  */
 import { execFileSync } from "node:child_process";
-import { mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import sharp from "sharp";
 
 const SRC = process.argv[2] ?? path.join(os.homedir(), "Downloads", "kapaklar");
 const OUT_DIR = "public/covers";
-const MAX_SIDE = 600;
-const AVIF_QUALITY = 38;
+const MAX_SIDE = 800;
+const AVIF_QUALITY = 45;
 
 type Book = {
   slug: string;
@@ -265,6 +265,18 @@ async function main() {
     b.isFeatured = true;
     b.featuredOrder = i + 1;
   });
+
+  // Kapaklardan okunan Uygurca başlıklar (data/ug-basliklar.json); doğrulanana kadar "verify_title_ug" işaretli
+  if (existsSync("data/ug-basliklar.json")) {
+    const titles = JSON.parse(readFileSync("data/ug-basliklar.json", "utf8")) as Record<string, Record<string, string>>;
+    for (const b of books) {
+      const t = titles[b.setSlug]?.[String(b.position)];
+      if (t && !b.titleUg) {
+        b.titleUg = t;
+        b.missingInfo = [...b.missingInfo.filter((m) => m !== "title_ug"), "verify_title_ug"];
+      }
+    }
+  }
 
   writeFileSync("src/data/catalog.generated.json", JSON.stringify({ sets, books }, null, 1) + "\n");
 

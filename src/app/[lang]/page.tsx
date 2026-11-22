@@ -24,6 +24,10 @@ export default async function HomePage() {
   ]);
   // Carousel için seçim yapılmadıysa katalogdaki ilk kitapları göster
   const setNames = Object.fromEntries(catalog.sets.map((s) => [s.id, setName(s, locale)]));
+  const byId = new Map(catalog.books.map((b) => [b.id, b]));
+  const siblingsBySet = Object.fromEntries(
+    catalog.sets.map((x) => [x.id, x.bookIds.map((id) => byId.get(id)).filter((b): b is NonNullable<typeof b> => !!b)]),
+  );
   const carouselBooks = featured.length > 0 ? featured : catalog.books.slice(0, 9);
 
   return (
@@ -33,7 +37,7 @@ export default async function HomePage() {
       <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6" aria-labelledby="featured-title">
         <SectionTitle id="featured-title">{dict.carousel.title}</SectionTitle>
         <div className="mt-8 overflow-hidden sm:px-14">
-          <BookCarousel books={carouselBooks} setNames={setNames} locale={locale} dir={localeDir[locale]} t={dict.carousel} catalogT={dict.catalog} />
+          <BookCarousel books={carouselBooks} setNames={setNames} siblingsBySet={siblingsBySet} locale={locale} dir={localeDir[locale]} t={dict.carousel} catalogT={dict.catalog} />
         </div>
         <div className="mt-2 text-center">
           <Link

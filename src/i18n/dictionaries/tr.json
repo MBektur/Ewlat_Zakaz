@@ -69,7 +69,15 @@
     "placeholderSet": "Geçici set",
     "untitled": "Kitap adı henüz eklenmedi",
     "volume": "{n}. kitap",
-    "preorderAll": "Tüm koleksiyonu ön sipariş et"
+    "preorderAll": "Tüm koleksiyonu ön sipariş et",
+    "close": "Kapat",
+    "prevBook": "Önceki kitap",
+    "nextBook": "Sonraki kitap",
+    "setLabel": "Set",
+    "topicLabel": "Konu",
+    "position": "{n} / {total}",
+    "open": "Kitabı büyüt",
+    "modalHint": "Ön sipariş tüm koleksiyon içindir."
   },
   "preorder": {
     "title": "Ön Sipariş Formu",

@@ -23,7 +23,7 @@ export function SetTiles({ locale, dict, catalog }: { locale: Locale; dict: Dict
   const unit = dict.catalog.bookCount.replace("{n}", "").trim();
 
   return (
-    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {sets.map((set, i) => {
         const withCover = set.bookIds.map((id) => byId.get(id)).filter((b) => b?.coverUrl);
         const landscape = (withCover[0]?.coverWidth ?? 0) > (withCover[0]?.coverHeight ?? 1);
@@ -42,7 +42,7 @@ export function SetTiles({ locale, dict, catalog }: { locale: Locale; dict: Dict
                 <span className="text-xs font-bold">{unit}</span>
               </span>
 
-              <div className="flex h-40 items-center justify-center px-5 pb-3 pt-10">
+              <div className="flex h-40 items-center justify-center overflow-hidden px-5 pb-3 pt-10">
                 {covers.length > 0 ? (
                   covers.map((b, n) => (
                     <div

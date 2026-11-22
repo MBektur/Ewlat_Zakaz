@@ -87,20 +87,20 @@
    "setSlug": "mini-masallar",
    "position": 1,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "كىچىك پاقا كۆركۆر",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/01.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": true,
    "featuredOrder": 5,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -108,20 +108,20 @@
    "setSlug": "mini-masallar",
    "position": 2,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ھەۋەسكار پوتپوت",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/02.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -129,20 +129,20 @@
    "setSlug": "mini-masallar",
    "position": 3,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تونتون ۋە ئۇنىڭ دوستلىرى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/03.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -150,20 +150,20 @@
    "setSlug": "mini-masallar",
    "position": 4,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ھالرەڭ قۇلاق",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/04.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -171,20 +171,20 @@
    "setSlug": "mini-masallar",
    "position": 5,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "پىستەك تودى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/05.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -192,20 +192,20 @@
    "setSlug": "mini-masallar",
    "position": 6,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "پاختا بىلەن تاغىل",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/06.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -213,20 +213,20 @@
    "setSlug": "mini-masallar",
    "position": 7,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "غاقغاق غاقى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/07.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -234,20 +234,20 @@
    "setSlug": "mini-masallar",
    "position": 8,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "كەپسىز دىكدىك",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/08.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -255,20 +255,20 @@
    "setSlug": "mini-masallar",
    "position": 9,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ئوماق كىكى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/09.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -276,20 +276,20 @@
    "setSlug": "mini-masallar",
    "position": 10,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "مۈشۈكئېيىق مىمى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/10.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -297,20 +297,20 @@
    "setSlug": "mini-masallar",
    "position": 11,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "باتۇر تونتى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/11.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -318,20 +318,20 @@
    "setSlug": "mini-masallar",
    "position": 12,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "راكون كۈنكۈن",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/12.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -339,20 +339,20 @@
    "setSlug": "mini-masallar",
    "position": 13,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تارتىنچاق دابى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/13.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -360,20 +360,20 @@
    "setSlug": "mini-masallar",
    "position": 14,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تارتما تاتات",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/14.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -381,20 +381,20 @@
    "setSlug": "mini-masallar",
    "position": 15,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "جىمى، جىجى ۋە كىپىر",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/15.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -402,20 +402,20 @@
    "setSlug": "mini-masallar",
    "position": 16,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "مىنىبۇس كۈشكۈش",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/16.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -423,20 +423,20 @@
    "setSlug": "mini-masallar",
    "position": 17,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "كېنگۇرۇ ھوپىدىك",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/17.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -444,20 +444,20 @@
    "setSlug": "mini-masallar",
    "position": 18,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "قىزىلمۇچ چاتچات",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/18.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -465,20 +465,20 @@
    "setSlug": "mini-masallar",
    "position": 19,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تىنچاق نازاكەت",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/19.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -486,20 +486,20 @@
    "setSlug": "mini-masallar",
    "position": 20,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "قاغا غاقغاق",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/20.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -507,20 +507,20 @@
    "setSlug": "mini-masallar",
    "position": 21,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ئالتۇن بېلىق شىپشىپ",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/21.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -528,20 +528,20 @@
    "setSlug": "mini-masallar",
    "position": 22,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "چۈجە چۈكچۈك",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/22.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -549,20 +549,20 @@
    "setSlug": "mini-masallar",
    "position": 23,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ئېيىقچاق نايناي",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/23.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -570,20 +570,20 @@
    "setSlug": "mini-masallar",
    "position": 24,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "قارىغۇ چاشقان بودرۇق",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/24.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -591,20 +591,20 @@
    "setSlug": "mini-masallar",
    "position": 25,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "يولۋاسجان ۋە سىنپى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/25.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -612,20 +612,20 @@
    "setSlug": "mini-masallar",
    "position": 26,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تاھىر بىلەن باتۇر",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/26.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -633,20 +633,20 @@
    "setSlug": "mini-masallar",
    "position": 27,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "كىچىك پىل پالۋان",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/27.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -654,20 +654,20 @@
    "setSlug": "mini-masallar",
    "position": 28,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ھاڭۋاقتى يۇمۇم",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/28.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -675,20 +675,20 @@
    "setSlug": "mini-masallar",
    "position": 29,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تادان بىلەن ئالغۇر",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/29.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -696,20 +696,20 @@
    "setSlug": "mini-masallar",
    "position": 30,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "پىنگۋىن قارجان",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/30.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -717,20 +717,20 @@
    "setSlug": "mini-masallar",
    "position": 31,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "يۇلتۇز يۇيۇ",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/31.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -738,20 +738,20 @@
    "setSlug": "mini-masallar",
    "position": 32,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "توشقان پوكپوك",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/32.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -759,20 +759,20 @@
    "setSlug": "mini-masallar",
    "position": 33,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "باتۇر ئۆردەك",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/33.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -780,20 +780,20 @@
    "setSlug": "mini-masallar",
    "position": 34,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ھاي - ھاي رەڭلەر",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/34.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -801,20 +801,20 @@
    "setSlug": "mini-masallar",
    "position": 35,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تورتچى ئۆردەكلەر",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/35.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -822,20 +822,20 @@
    "setSlug": "mini-masallar",
    "position": 36,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "سۆيۈملۈك ئانىمىز",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/36.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -843,20 +843,20 @@
    "setSlug": "mini-masallar",
    "position": 37,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ئاغرىپ قالغان سۆسۈن ئۆردەك",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/37.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -864,20 +864,20 @@
    "setSlug": "mini-masallar",
    "position": 38,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "كەڭ جاھان",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/38.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -885,20 +885,20 @@
    "setSlug": "mini-masallar",
    "position": 39,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "قوشنا تاتلىقجان",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/39.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -906,20 +906,20 @@
    "setSlug": "mini-masallar",
    "position": 40,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ياخشى قوشنىلار",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/40.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -927,20 +927,20 @@
    "setSlug": "mini-masallar",
    "position": 41,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تايچاق تايتاي",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/41.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -948,20 +948,20 @@
    "setSlug": "mini-masallar",
    "position": 42,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "پاسپۇس كەنتى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/42.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -969,20 +969,20 @@
    "setSlug": "mini-masallar",
    "position": 43,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ئۆچكە مومىلار",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/43.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -990,20 +990,20 @@
    "setSlug": "mini-masallar",
    "position": 44,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "قۇتۇپ ئېيىقى ئاقۇچ",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/44.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1011,20 +1011,20 @@
    "setSlug": "mini-masallar",
    "position": 45,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "قوزىچاق قوزىلەم",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/45.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1032,20 +1032,20 @@
    "setSlug": "mini-masallar",
    "position": 46,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "چۆل چاشقىنى مىمى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/46.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1053,20 +1053,20 @@
    "setSlug": "mini-masallar",
    "position": 47,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "دىكدىكى توشقان",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/47.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1074,20 +1074,20 @@
    "setSlug": "mini-masallar",
    "position": 48,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تەخەي چىلان",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/48.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1095,20 +1095,20 @@
    "setSlug": "mini-masallar",
    "position": 49,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تىنچاق پىندەك",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/49.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1116,20 +1116,20 @@
    "setSlug": "mini-masallar",
    "position": 50,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "يۇنۇس بېلىقى لەيلى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/mini-masallar/50.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1137,20 +1137,20 @@
    "setSlug": "hikayelerle-dini-degerler",
    "position": 1,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "پستەك پستە",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hikayelerle-dini-degerler/01.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": true,
    "featuredOrder": 3,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1158,20 +1158,20 @@
    "setSlug": "hikayelerle-dini-degerler",
    "position": 2,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "چۆجە جەنەستە",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hikayelerle-dini-degerler/02.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1179,20 +1179,20 @@
    "setSlug": "hikayelerle-dini-degerler",
    "position": 3,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "پاقا پالپال",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hikayelerle-dini-degerler/03.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1200,20 +1200,20 @@
    "setSlug": "hikayelerle-dini-degerler",
    "position": 4,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "مايمۇن مۇراد",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hikayelerle-dini-degerler/04.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1221,20 +1221,20 @@
    "setSlug": "hikayelerle-dini-degerler",
    "position": 5,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "قوزىچاق مەرەمخان",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hikayelerle-dini-degerler/05.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1242,20 +1242,20 @@
    "setSlug": "hikayelerle-dini-degerler",
    "position": 6,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تايچاق تۆلپار",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hikayelerle-dini-degerler/06.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1263,20 +1263,20 @@
    "setSlug": "hikayelerle-dini-degerler",
    "position": 7,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ئېيىقچاق زېرەكچاق",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hikayelerle-dini-degerler/07.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1284,20 +1284,20 @@
    "setSlug": "hikayelerle-dini-degerler",
    "position": 8,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تىينچاق تىلغۇلدى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hikayelerle-dini-degerler/08.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1305,7 +1305,7 @@
    "setSlug": "hikayelerle-dini-degerler",
    "position": 9,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ئاسلانچاق بادام",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hikayelerle-dini-degerler/09.avif",
@@ -1317,8 +1317,8 @@
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1326,20 +1326,20 @@
    "setSlug": "hikayelerle-dini-degerler",
    "position": 10,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ياپراق قۇرتى يامى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hikayelerle-dini-degerler/10.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1347,20 +1347,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 1,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "سۇنۇق ئەينەك",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/01.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": true,
    "featuredOrder": 7,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1368,20 +1368,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 2,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "پۇرايدىغان سىنىپ",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/02.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1389,20 +1389,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 3,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "سۇ ئاقىدىغان تورۇس",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/03.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1410,20 +1410,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 4,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "كىچىك بىر پارچە يەر",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/04.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1431,20 +1431,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 5,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تەتىل",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/05.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1452,20 +1452,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 6,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "كىچىك كۆلبە ئۆي",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/06.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1473,20 +1473,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 7,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "سەت ۋە چىرايلىق",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/07.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1494,20 +1494,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 8,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ھەرگىز قېرىماڭ",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/08.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1515,20 +1515,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 9,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ئائىشە ئانا",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/09.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1536,20 +1536,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 10,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "يېرىم ئالما",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/10.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1557,20 +1557,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 11,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "دوست",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/11.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1578,20 +1578,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 12,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ئۇماچ",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/12.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1599,20 +1599,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 13,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "دۇكانچىنىڭ ھېسابى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/13.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1620,20 +1620,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 14,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "قايسى ياشار",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/14.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1641,20 +1641,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 15,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تۇزاق",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/15.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1662,20 +1662,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 16,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "يېرىم كىلو",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/16.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1683,20 +1683,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 17,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "چار مېكيان",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/17.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1704,20 +1704,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 18,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "پادىچىنىڭ ئېتى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/18.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1725,20 +1725,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 19,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "نېمىدېگەن ئوماق",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/19.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1746,20 +1746,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 20,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "قىزچاق",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/20.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1767,20 +1767,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 21,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ھامال",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/21.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1788,20 +1788,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 22,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "مېھمان",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/22.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1809,20 +1809,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 23,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "بېلىقچى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/23.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1830,20 +1830,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 24,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تۆلكىنىڭ سالامى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/24.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1851,20 +1851,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 25,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "سۈتلۈك ئاش",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/25.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1872,20 +1872,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 26,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ھېچكىم",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/26.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1893,20 +1893,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 27,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تەنھەركەت كىيىمى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/27.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1914,20 +1914,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 28,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ئۈستەل",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/28.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1935,20 +1935,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 29,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "قەدىناس دۈشمەن",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/29.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1956,20 +1956,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 30,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "بولغۇسى مەھەللە باشلىقى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/30.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1977,20 +1977,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 31,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ساپ ھاۋا، خۇشپۇراق",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/31.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -1998,20 +1998,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 32,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "يوغان ۋېلىسىپىت",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/32.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2019,20 +2019,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 33,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "مېۋىلىك باغ",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/33.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2040,20 +2040,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 34,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "توپ",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/34.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2061,20 +2061,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 35,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "قول سۇندى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/35.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2082,20 +2082,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 36,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "غېچىرلايدىغان ۋېلىسىپىت",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/36.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2103,20 +2103,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 37,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ساراي",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/37.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2124,20 +2124,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 38,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "كۆشك",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/38.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2145,20 +2145,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 39,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تونۇر كاۋىپى",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/39.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2166,20 +2166,20 @@
    "setSlug": "kirk-hadis-kirk-hikaye",
    "position": 40,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ئاياق",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/kirk-hadis-kirk-hikaye/40.avif",
-   "coverWidth": 600,
-   "coverHeight": 469,
+   "coverWidth": 800,
+   "coverHeight": 625,
    "thicknessMm": 3,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2191,8 +2191,8 @@
    "topicTr": "Aile",
    "topicUg": "ئائىلە",
    "coverUrl": "/covers/ayetlerle-dini-degerler/01.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": true,
@@ -2213,8 +2213,8 @@
    "topicTr": "Çalışkanlık",
    "topicUg": "تىرىشچانلىق",
    "coverUrl": "/covers/ayetlerle-dini-degerler/02.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2235,8 +2235,8 @@
    "topicTr": "Sağlıklı beslenme",
    "topicUg": "ساغلام ئوزۇقلىنىش",
    "coverUrl": "/covers/ayetlerle-dini-degerler/03.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2257,8 +2257,8 @@
    "topicTr": "Düşmanlık",
    "topicUg": "ئاداۋەت",
    "coverUrl": "/covers/ayetlerle-dini-degerler/04.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2279,8 +2279,8 @@
    "topicTr": "Engelsiz yaşam",
    "topicUg": "توسالغۇسىز ھايات",
    "coverUrl": "/covers/ayetlerle-dini-degerler/05.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2301,8 +2301,8 @@
    "topicTr": "Kurallara uymak",
    "topicUg": "تۈزۈمگە بويسۇنۇش",
    "coverUrl": "/covers/ayetlerle-dini-degerler/06.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2323,8 +2323,8 @@
    "topicTr": "Kitap sevgisi",
    "topicUg": "كىتاب سۆيگۈسى",
    "coverUrl": "/covers/ayetlerle-dini-degerler/07.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2345,8 +2345,8 @@
    "topicTr": "Şefkatli olmak",
    "topicUg": "كۆيۈمچان بولۇش",
    "coverUrl": "/covers/ayetlerle-dini-degerler/08.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2367,8 +2367,8 @@
    "topicTr": "Çevreyi korumak",
    "topicUg": "مۇھىتنى ئاسراش",
    "coverUrl": "/covers/ayetlerle-dini-degerler/09.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2389,8 +2389,8 @@
    "topicTr": "Ağırbaşlı olmak",
    "topicUg": "تەمكىن بولۇش",
    "coverUrl": "/covers/ayetlerle-dini-degerler/10.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2411,8 +2411,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/peygamberimizin-hayati/01.avif",
-   "coverWidth": 428,
-   "coverHeight": 600,
+   "coverWidth": 571,
+   "coverHeight": 800,
    "thicknessMm": 5,
    "isPlaceholder": false,
    "isFeatured": true,
@@ -2432,8 +2432,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/peygamberimizin-hayati/02.avif",
-   "coverWidth": 428,
-   "coverHeight": 600,
+   "coverWidth": 571,
+   "coverHeight": 800,
    "thicknessMm": 5,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2453,8 +2453,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/peygamberimizin-hayati/03.avif",
-   "coverWidth": 428,
-   "coverHeight": 600,
+   "coverWidth": 571,
+   "coverHeight": 800,
    "thicknessMm": 5,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2474,8 +2474,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/peygamberimizin-hayati/04.avif",
-   "coverWidth": 428,
-   "coverHeight": 600,
+   "coverWidth": 571,
+   "coverHeight": 800,
    "thicknessMm": 5,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2495,8 +2495,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/peygamberimizin-hayati/05.avif",
-   "coverWidth": 428,
-   "coverHeight": 600,
+   "coverWidth": 571,
+   "coverHeight": 800,
    "thicknessMm": 5,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2516,8 +2516,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/peygamberimizin-hayati/06.avif",
-   "coverWidth": 428,
-   "coverHeight": 600,
+   "coverWidth": 571,
+   "coverHeight": 800,
    "thicknessMm": 5,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2537,8 +2537,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/peygamberimizin-hayati/07.avif",
-   "coverWidth": 428,
-   "coverHeight": 600,
+   "coverWidth": 571,
+   "coverHeight": 800,
    "thicknessMm": 5,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2558,8 +2558,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/peygamberimizin-hayati/08.avif",
-   "coverWidth": 428,
-   "coverHeight": 600,
+   "coverWidth": 571,
+   "coverHeight": 800,
    "thicknessMm": 5,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2579,8 +2579,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/peygamberimizin-hayati/09.avif",
-   "coverWidth": 428,
-   "coverHeight": 600,
+   "coverWidth": 571,
+   "coverHeight": 800,
    "thicknessMm": 5,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2600,8 +2600,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/peygamberimizin-hayati/10.avif",
-   "coverWidth": 428,
-   "coverHeight": 600,
+   "coverWidth": 571,
+   "coverHeight": 800,
    "thicknessMm": 5,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2621,8 +2621,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/allahi-merak-ediyorum/01.avif",
-   "coverWidth": 450,
-   "coverHeight": 600,
+   "coverWidth": 600,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": true,
@@ -2642,8 +2642,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/allahi-merak-ediyorum/02.avif",
-   "coverWidth": 450,
-   "coverHeight": 600,
+   "coverWidth": 600,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2663,8 +2663,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/allahi-merak-ediyorum/03.avif",
-   "coverWidth": 450,
-   "coverHeight": 600,
+   "coverWidth": 600,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2684,8 +2684,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/allahi-merak-ediyorum/04.avif",
-   "coverWidth": 450,
-   "coverHeight": 600,
+   "coverWidth": 600,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2705,8 +2705,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/allahi-merak-ediyorum/05.avif",
-   "coverWidth": 450,
-   "coverHeight": 600,
+   "coverWidth": 600,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -2722,20 +2722,20 @@
    "setSlug": "hadis-bahcesi",
    "position": 1,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ھەرە ھەسەلخان",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hadis-bahcesi/01.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": true,
    "featuredOrder": 2,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2743,20 +2743,20 @@
    "setSlug": "hadis-bahcesi",
    "position": 2,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "شاھ سەردار",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hadis-bahcesi/02.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2764,20 +2764,20 @@
    "setSlug": "hadis-bahcesi",
    "position": 3,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "يۇنۇس بېلىقى نۇسنۇس",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hadis-bahcesi/03.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2785,20 +2785,20 @@
    "setSlug": "hadis-bahcesi",
    "position": 4,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "تۆلكە كۆركەم",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hadis-bahcesi/04.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2806,20 +2806,20 @@
    "setSlug": "hadis-bahcesi",
    "position": 5,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "جەرەن جانجان",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hadis-bahcesi/05.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2827,20 +2827,20 @@
    "setSlug": "hadis-bahcesi",
    "position": 6,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "پانۇس بېلىقى پىلدىر",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hadis-bahcesi/06.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2848,20 +2848,20 @@
    "setSlug": "hadis-bahcesi",
    "position": 7,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "دىنازاۋۇر دىلارا",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hadis-bahcesi/07.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2869,20 +2869,20 @@
    "setSlug": "hadis-bahcesi",
    "position": 8,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "ئۆردەك رەڭگارەڭ",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hadis-bahcesi/08.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2890,20 +2890,20 @@
    "setSlug": "hadis-bahcesi",
    "position": 9,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "قۇتۇپ ئېيىقى تانتۇ",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hadis-bahcesi/09.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -2911,20 +2911,20 @@
    "setSlug": "hadis-bahcesi",
    "position": 10,
    "titleTr": null,
-   "titleUg": null,
+   "titleUg": "توز نازۇك",
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/hadis-bahcesi/10.avif",
-   "coverWidth": 418,
-   "coverHeight": 600,
+   "coverWidth": 557,
+   "coverHeight": 800,
    "thicknessMm": 4,
    "isPlaceholder": false,
    "isFeatured": false,
    "featuredOrder": 0,
    "missingInfo": [
     "title_tr",
-    "title_ug",
-    "thickness_mm"
+    "thickness_mm",
+    "verify_title_ug"
    ]
   },
   {
@@ -3146,8 +3146,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/atlas-kitaplari/01.avif",
-   "coverWidth": 443,
-   "coverHeight": 600,
+   "coverWidth": 590,
+   "coverHeight": 800,
    "thicknessMm": 14,
    "isPlaceholder": false,
    "isFeatured": true,
@@ -3166,8 +3166,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/atlas-kitaplari/02.avif",
-   "coverWidth": 436,
-   "coverHeight": 600,
+   "coverWidth": 581,
+   "coverHeight": 800,
    "thicknessMm": 14,
    "isPlaceholder": false,
    "isFeatured": true,
@@ -3186,8 +3186,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/atlas-kitaplari/03.avif",
-   "coverWidth": 439,
-   "coverHeight": 600,
+   "coverWidth": 585,
+   "coverHeight": 800,
    "thicknessMm": 14,
    "isPlaceholder": false,
    "isFeatured": false,
@@ -3269,8 +3269,8 @@
    "topicTr": null,
    "topicUg": null,
    "coverUrl": "/covers/tek-kitaplar/04.avif",
-   "coverWidth": 597,
-   "coverHeight": 600,
+   "coverWidth": 796,
+   "coverHeight": 800,
    "thicknessMm": 6,
    "isPlaceholder": false,
    "isFeatured": true,
