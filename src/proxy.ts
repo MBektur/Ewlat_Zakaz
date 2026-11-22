@@ -1,0 +1,43 @@
+import { NextResponse, type NextRequest } from "next/server";
+import { defaultLocale, hasLocale, type Locale } from "@/i18n/config";
+import { ADMIN_COOKIE } from "@/lib/auth-constants";
+
+function preferredLocale(request: NextRequest): Locale {
+  const saved = request.cookies.get("lang")?.value;
+  if (hasLocale(saved)) return saved;
+  const accept = request.headers.get("accept-language") ?? "";
+  return /(^|,)\s*ug\b/i.test(accept) ? "ug" : defaultLocale;
+}
+
+export function proxy(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // Admin: hızlı ön kontrol. Asıl yetki kontrolü sayfalarda ve action'larda yapılır.
+  if (pathname.startsWith("/admin")) {
+    if (pathname !== "/admin/login" && !request.cookies.has(ADMIN_COOKIE)) {
+      return NextResponse.redirect(new URL("/admin/login", request.url));
+    }
+    return NextResponse.next();
+  }
+
+  const first = pathname.split("/")[1];
+  if (hasLocale(first)) {
+    const response = NextResponse.next();
+    if (request.cookies.get("lang")?.value !== first) {
+      response.cookies.set("lang", first, { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" });
+    }
+    return response;
+  }
+
+  // Dil öneki olmayan adresler: /kitaplar → /tr/kitaplar
+  const url = request.nextUrl.clone();
+  url.pathname = `/${preferredLocale(request)}${pathname === "/" ? "" : pathname}`;
+  return NextResponse.redirect(url);
+}
+
+export const config = {
+  matcher: [
+    // _next, media, statik dosyalar (uzantılı yollar) ve metadata dosyaları hariç
+    "/((?!_next|media|covers|favicon.ico|icon|apple-icon|robots.txt|sitemap.xml|.*\\..*).*)",
+  ],
+};
