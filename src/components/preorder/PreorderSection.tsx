@@ -1,7 +1,8 @@
-import { Check, PencilLine, ShieldCheck } from "lucide-react";
+import { Check, MessageCircle, PencilLine, ShieldCheck } from "lucide-react";
 import { ParcelArt } from "@/components/art/ParcelArt";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { whatsappUrl } from "@/lib/contact";
 import { getCountryList } from "@/lib/geo";
 import { getPricing } from "@/lib/queries";
 import { PreorderForm } from "./PreorderForm";
@@ -53,6 +54,23 @@ export async function PreorderSection({ locale, dict, headingLevel = "h2" }: Pro
               </li>
             ))}
           </ul>
+
+          {/* WhatsApp iletişim: kutunun altında, form kolonuyla aynı hizada kalır. */}
+          <div className="mt-auto border-t border-white/20 pt-7">
+            <p className="text-lg font-extrabold">{t.whatsappTitle}</p>
+            <p className="mt-1 leading-relaxed text-white/80">{t.whatsappText}</p>
+            <a
+              href={whatsappUrl(locale)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex max-w-full items-center gap-3 rounded-full bg-white py-2.5 pe-6 ps-2.5 font-extrabold text-ink shadow-lift transition hover:bg-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun"
+            >
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
+                <MessageCircle className="size-6" aria-hidden="true" fill="currentColor" strokeWidth={0} />
+              </span>
+              <span>{dict.site.whatsapp}</span>
+            </a>
+          </div>
         </div>
       </aside>
     </div>

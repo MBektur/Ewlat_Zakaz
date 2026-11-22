@@ -2,6 +2,8 @@
   "site": {
     "brand": "Ewlat Kitap",
     "whatsapp": "WhatsApp ile yazın",
+    "scrollTop": "Sayfa başına git",
+    "scrollBottom": "Sayfa sonuna git",
     "description": "Arap harfli Uygurca çocuk kitapları koleksiyonu. Basım öncesi ön sipariş."
   },
   "nav": {
@@ -127,6 +129,8 @@
     "quantityHint": "Her takım koleksiyonun tamamını içerir.",
     "total": "Toplam",
     "artText": "Kitaplarınız Kısa Sürede Kapınızda!",
+    "whatsappTitle": "Sorunuz mu var?",
+    "whatsappText": "Ön sipariş hakkında WhatsApp üzerinden doğrudan bize yazabilirsiniz.",
     "wizard": {
       "steps": [
         "Bilgileriniz",
