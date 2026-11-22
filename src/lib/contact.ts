@@ -10,6 +10,20 @@ export const MAIN_SITE_LABEL = "ewlat.org";
 /** Ekranda gösterilen biçim. */
 export const WHATSAPP_DISPLAY = "+90 553 070 73 50";
 
+/** E-posta ve ewlat.net bağlantısı. */
+export const CONTACT_EMAIL = "ewlatnet@gmail.com";
+export const NET_SITE_URL = "https://www.ewlat.net";
+export const NET_SITE_LABEL = "www.ewlat.net";
+
+/** Sosyal medya hesapları (WhatsApp ayrıca whatsappUrl ile gelir). */
+export const SOCIAL_LINKS = [
+  { key: "youtube", label: "YouTube", href: "https://www.youtube.com/ewlatnet" },
+  { key: "x", label: "X", href: "https://x.com/ewlatnet" },
+  { key: "facebook", label: "Facebook", href: "https://www.facebook.com/ewlatorg" },
+  { key: "instagram", label: "Instagram", href: "https://www.instagram.com/ewlatnet" },
+  { key: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/ewlad-guruppisi-047152323/" },
+] as const;
+
 const messages: Record<Locale, string> = {
   tr: "Merhaba, ön sipariş hakkında bilgi almak istiyorum.",
   ug: "ئەسسالامۇئەلەيكۇم، 154 كىتابنى زاكاز قىلىش ھەققىدە ئۇچۇر ئالماقچى ئىدىم.",

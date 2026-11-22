@@ -81,7 +81,9 @@
     "position": "{n} / {total}",
     "open": "Kitabı büyüt",
     "modalHint": "Ön sipariş tüm koleksiyon içindir.",
-    "keyHint": "Yön tuşlarıyla kitaplar arasında geçiş yapabilirsiniz."
+    "keyHint": "Yön tuşlarıyla kitaplar arasında geçiş yapabilirsiniz.",
+    "loadMore": "Daha fazla yükle",
+    "showAll": "Tümünü göster ({n})"
   },
   "preorder": {
     "title": "Ön Sipariş Formu",
@@ -243,5 +245,12 @@
     "text": "Tüm koleksiyon",
     "cta": "Hemen Ön Sipariş Ver",
     "badge": "Sınırlı süre!"
+  },
+  "video": {
+    "sectionTitle": "Tanıtım Videosu",
+    "title": "Ewlat Kitap — Tanıtım Videosu",
+    "caption": "Ewlat Kitap hakkında daha fazla bilgi edinin",
+    "modalClose": "Videoyu kapat",
+    "modalSkip": "Şimdi değil"
   }
 }

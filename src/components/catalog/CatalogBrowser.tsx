@@ -2,7 +2,9 @@
 
 import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { Search, X } from "lucide-react";
+import { ChevronDown, Search, X } from "lucide-react";
+
+const INITIAL_LIMIT = 10;
 import { Book3D, bookSize } from "@/components/book/Book3D";
 import { BookCaption } from "@/components/book/BookCaption";
 import { BookModal } from "@/components/book/BookModal";
@@ -44,6 +46,8 @@ export function CatalogBrowser({
   const [activeSet, setActiveSet] = useState(initialSet);
   const [query, setQuery] = useState(initialQuery);
   const [openId, setOpenId] = useState<number | null>(null);
+  // Her set için görüntülenen kitap sayısı; key = set.id
+  const [limits, setLimits] = useState<Record<number, number>>({});
 
   const booksById = useMemo(() => new Map(catalog.books.map((b) => [b.id, b])), [catalog.books]);
   const sets = useMemo(() => catalog.sets.filter((s) => s.bookIds.length > 0), [catalog.sets]);
@@ -147,7 +151,13 @@ export function CatalogBrowser({
         <p className="py-24 text-center text-body">{t.empty}</p>
       ) : (
         <div className="space-y-16 pt-10">
-          {groups.map(({ set, label, books }) => (
+          {groups.map(({ set, label, books }) => {
+            const limit = limits[set.id] ?? INITIAL_LIMIT;
+            const visible = books.slice(0, limit);
+            const remaining = books.length - visible.length;
+            const allShown = remaining <= 0;
+
+            return (
             <section key={set.id} aria-labelledby={`set-${set.id}`}>
               <div className="mb-6 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-b border-line pb-3">
                 <h2 id={`set-${set.id}`} className="font-display text-2xl tracking-tight text-ink">
@@ -163,7 +173,7 @@ export function CatalogBrowser({
                 </h2>
               </div>
               <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 lg:grid-cols-5">
-                {books.map((book) => (
+                {visible.map((book) => (
                   <li key={book.id} className="relative flex flex-col items-center rounded-2xl border border-line bg-surface px-2 pb-4 pt-4 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lift">
                     {/* Tüm kartı kaplayan görünmez düğme: tıklayınca ayrıntı penceresi açılır */}
                     <button
@@ -193,8 +203,37 @@ export function CatalogBrowser({
                   </li>
                 ))}
               </ul>
+
+              {/* Daha fazla yükle */}
+              {!allShown && (
+                <div className="mt-8 flex items-center justify-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setLimits((prev) => ({ ...prev, [set.id]: (prev[set.id] ?? INITIAL_LIMIT) + INITIAL_LIMIT }))
+                    }
+                    className="inline-flex items-center gap-2 rounded-full border-2 border-primary bg-surface px-6 py-2.5 text-sm font-extrabold text-primary transition hover:bg-primary hover:text-white"
+                  >
+                    <ChevronDown className="size-4" strokeWidth={2.5} />
+                    {t.loadMore}
+                    <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-bold text-primary group-hover:bg-white/20">
+                      +{Math.min(remaining, INITIAL_LIMIT)}
+                    </span>
+                  </button>
+                  {remaining > INITIAL_LIMIT && (
+                    <button
+                      type="button"
+                      onClick={() => setLimits((prev) => ({ ...prev, [set.id]: books.length }))}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-2.5 text-sm font-bold text-body transition hover:border-line-strong hover:text-ink"
+                    >
+                      {fill(t.showAll, { n: books.length })}
+                    </button>
+                  )}
+                </div>
+              )}
             </section>
-          ))}
+            );
+          })}
         </div>
       )}
       {openBook && (
