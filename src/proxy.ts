@@ -6,8 +6,8 @@ import { ADMIN_COOKIE } from "@/lib/auth-constants";
 function preferredLocale(request: NextRequest): Locale {
   const saved = request.cookies.get("lang")?.value;
   if (hasLocale(saved)) return saved;
-  const accept = request.headers.get("accept-language") ?? "";
-  return /(^|,)\s*ug\b/i.test(accept) ? "ug" : defaultLocale;
+  // Çerez yoksa (ilk ziyaret) tarayıcı diline bakılmaz, site Uygurca açılır.
+  return defaultLocale;
 }
 
 export function proxy(request: NextRequest) {
@@ -44,7 +44,7 @@ export function proxy(request: NextRequest) {
     return response;
   }
 
-  // Dil öneki olmayan adresler: /kitaplar → /tr/kitaplar
+  // Dil öneki olmayan adresler: /kitaplar → /ug/kitaplar (çerezde kayıtlı dil varsa o)
   const url = request.nextUrl.clone();
   url.pathname = `/${preferredLocale(request)}${pathname === "/" ? "" : pathname}`;
   return NextResponse.redirect(url);
