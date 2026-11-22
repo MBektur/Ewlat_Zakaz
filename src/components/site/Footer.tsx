@@ -4,6 +4,7 @@ import { Heart } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { BrandText, LogoMark } from "./Logo";
+import { WhatsAppLink } from "./WhatsAppLink";
 
 export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
@@ -24,6 +25,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             <Link href={localePath(locale, "preorder")} className="text-white/90 hover:text-sun">{dict.nav.preorder}</Link>
             <Link href={localePath(locale, "privacy")} className="text-white/90 hover:text-sun">{dict.footer.privacy}</Link>
           </nav>
+          <WhatsAppLink locale={locale} label={dict.footer.whatsapp} className="mt-5" />
         </div>
         <div className="rounded-3xl bg-white px-6 py-5 text-ink shadow-lift">
           <p className="font-display flex items-center gap-3 text-xl leading-tight">

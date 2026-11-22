@@ -97,6 +97,7 @@
     "successTitle": "Talebiniz alındı",
     "successText": "Teşekkürler {name}. {quantity} takım için toplam {total} tutarındaki ön siparişiniz kaydedildi. Basım süreci netleştiğinde {phone} numarasından sizi arayacağız.",
     "another": "Yeni talep oluştur",
+    "whatsapp": "WhatsApp ile yazın",
     "errors": {
       "fullName": "Lütfen ad ve soyadınızı yazın.",
       "phone": "Geçerli bir telefon numarası yazın.",
@@ -190,12 +191,14 @@
         "text": "6698 sayılı KVKK'nın 11. maddesi kapsamında verilerinize erişme, düzeltilmesini veya silinmesini isteme hakkına sahipsiniz. Bunun için bizimle iletişime geçebilirsiniz."
       }
     ],
+    "whatsapp": "WhatsApp ile yazın",
     "back": "Forma dön"
   },
   "footer": {
     "tagline": "Geleceğimiz için Kitap Okuyalım",
     "privacy": "Aydınlatma metni",
-    "sampleNotice": ""
+    "sampleNotice": "",
+    "whatsapp": "WhatsApp ile yazın"
   },
   "notFound": {
     "title": "Sayfa bulunamadı",

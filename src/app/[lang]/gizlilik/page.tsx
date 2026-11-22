@@ -2,6 +2,7 @@ import { localePath } from "@/i18n/paths";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
+import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
 // NOT: Bu metin bir taslaktır. Yayına almadan önce veri sorumlusu bilgileri
 // (unvan, adres, iletişim) eklenmeli ve hukuki açıdan gözden geçirilmelidir.
@@ -26,9 +27,12 @@ export default async function PrivacyPage() {
           </section>
         ))}
       </div>
-      <Link href={localePath(locale, "preorder")} className="mt-10 inline-block text-sm font-medium text-primary hover:underline">
-        {t.back}
-      </Link>
+      <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <WhatsAppLink locale={locale} label={t.whatsapp} />
+        <Link href={localePath(locale, "preorder")} className="text-sm font-medium text-primary hover:underline">
+          {t.back}
+        </Link>
+      </div>
     </article>
   );
 }
