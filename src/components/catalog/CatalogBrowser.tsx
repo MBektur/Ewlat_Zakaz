@@ -259,17 +259,17 @@ export function CatalogBrowser({
 
               {/* Daha fazla yükle */}
               {!allShown && (
-                <div className="mt-8 flex items-center justify-center gap-3">
+                <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
                   <button
                     type="button"
                     onClick={() =>
                       setLimits((prev) => ({ ...prev, [set.id]: (prev[set.id] ?? INITIAL_LIMIT) + INITIAL_LIMIT }))
                     }
-                    className="inline-flex items-center gap-2 rounded-full border-2 border-primary bg-surface px-6 py-2.5 text-sm font-extrabold text-primary transition hover:bg-primary hover:text-white"
+                    className="btn-coral group inline-flex items-center gap-2.5 rounded-full px-7 py-3 text-sm font-extrabold transition-all hover:scale-[1.02] active:scale-95"
                   >
-                    <ChevronDown className="size-4" strokeWidth={2.5} />
-                    {t.loadMore}
-                    <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-bold text-primary group-hover:bg-white/20">
+                    <ChevronDown className="size-4.5 transition-transform group-hover:translate-y-0.5" strokeWidth={2.8} />
+                    <span>{t.loadMore}</span>
+                    <span className="rounded-full bg-black/15 px-2 py-0.5 text-xs font-black text-white">
                       +{Math.min(remaining, INITIAL_LIMIT)}
                     </span>
                   </button>
@@ -277,7 +277,7 @@ export function CatalogBrowser({
                     <button
                       type="button"
                       onClick={() => setLimits((prev) => ({ ...prev, [set.id]: books.length }))}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-2.5 text-sm font-bold text-body transition hover:border-line-strong hover:text-ink"
+                      className="inline-flex items-center gap-1.5 rounded-full border-2 border-line-strong bg-surface px-5 py-2.5 text-sm font-bold text-ink shadow-soft transition hover:border-primary hover:text-primary active:scale-95"
                     >
                       {fill(t.showAll, { n: books.length })}
                     </button>
