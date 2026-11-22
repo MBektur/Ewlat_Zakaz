@@ -198,7 +198,10 @@
         "text": "6698 sayılı KVKK'nın 11. maddesi kapsamında verilerinize erişme, düzeltilmesini veya silinmesini isteme hakkına sahipsiniz. Bunun için bizimle iletişime geçebilirsiniz."
       }
     ],
-    "back": "Forma dön"
+    "back": "Forma dön",
+    "subtitle": "Ön sipariş sürecinde paylaştığınız verilerin gizliliği ve güvenliği önceliğimizdir.",
+    "contactTitle": "Sorularınız mı var?",
+    "contactText": "Kişisel verilerinizle ilgili her türlü soru ve talebiniz için bizimle doğrudan iletişime geçebilirsiniz."
   },
   "footer": {
     "tagline": "Geleceğimiz için Kitap Okuyalım",

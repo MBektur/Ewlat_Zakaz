@@ -6,31 +6,21 @@ import type { Locale } from "@/i18n/config";
 import Link from "next/link";
 import { ShoppingBag } from "lucide-react";
 import { getCatalog, getPricing } from "@/lib/queries";
-import { setName } from "@/lib/format";
 import { PriceTag } from "@/components/preorder/PriceTag";
-import { CatalogBrowser, CatalogFromUrl } from "@/components/catalog/CatalogBrowser";
+import { CatalogFromUrl } from "@/components/catalog/CatalogBrowser";
 
 type PageProps = {
   params: Promise<{ lang: string }>;
-  searchParams: Promise<{ set?: string; q?: string }>;
 };
 
+export function generateStaticParams() {
+  return [{ lang: "tr" }, { lang: "ug" }];
+}
+
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
-  const [{ lang }, search] = await Promise.all([props.params, props.searchParams]);
+  const { lang } = await props.params;
   const locale = (lang === "tr" ? "tr" : "ug") as Locale;
   const dict = await getDictionary(locale);
-  const setSlug = typeof search?.set === "string" ? search.set.trim().toLowerCase() : "";
-  if (setSlug) {
-    const catalog = await getCatalog();
-    const set = catalog.sets.find((s) => s.slug.toLowerCase() === setSlug || String(s.id) === setSlug);
-    if (set) {
-      const name = setName(set, locale);
-      return {
-        title: `${name} · ${dict.catalog.title}`,
-        description: (locale === "ug" ? set.descriptionUg : set.descriptionTr) ?? dict.catalog.subtitle,
-      };
-    }
-  }
   return { title: dict.catalog.title, description: dict.catalog.subtitle };
 }
 
@@ -60,7 +50,7 @@ export default async function CatalogPage(props: PageProps) {
       </div>
       <div className="mt-8">
         <Suspense fallback={<CatalogSkeleton />}>
-          <FilteredCatalog searchParams={props.searchParams} {...baseProps} />
+          <CatalogFromUrl {...baseProps} />
         </Suspense>
       </div>
     </div>
@@ -88,19 +78,4 @@ function CatalogSkeleton() {
       </div>
     </div>
   );
-}
-
-async function FilteredCatalog({
-  searchParams,
-  ...props
-}: {
-  searchParams: Promise<{ set?: string; q?: string }>;
-  catalog: Awaited<ReturnType<typeof getCatalog>>;
-  locale: Locale;
-  t: Awaited<ReturnType<typeof getDictionary>>["catalog"];
-}) {
-  const search = await searchParams;
-  const initialSet = typeof search?.set === "string" ? search.set : "";
-  const initialQuery = typeof search?.q === "string" ? search.q : "";
-  return <CatalogFromUrl {...props} initialSet={initialSet} initialQuery={initialQuery} />;
 }
