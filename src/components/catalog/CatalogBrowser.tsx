@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ChevronDown, Search, X } from "lucide-react";
 
@@ -11,18 +11,22 @@ import { BookModal } from "@/components/book/BookModal";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { bookLabel, fill, setName } from "@/lib/format";
-import type { Catalog, CatalogBook } from "@/lib/types";
+import type { Catalog, CatalogBook, CatalogSet } from "@/lib/types";
 
 type Props = {
   catalog: Catalog;
   locale: Locale;
   t: Dictionary["catalog"];
+  initialSet?: string;
+  initialQuery?: string;
 };
 
-/** URL'deki ?set= ve ?q= değerleriyle başlar. */
+/** URL'deki ?set= ve ?q= değerleriyle başlar ve tarayıcı parametrelerindeki değişiklikleri izler. */
 export function CatalogFromUrl(props: Props) {
   const params = useSearchParams();
-  return <CatalogBrowser {...props} initialSet={params.get("set") ?? ""} initialQuery={params.get("q") ?? ""} />;
+  const set = params.get("set") ?? props.initialSet ?? "";
+  const q = params.get("q") ?? props.initialQuery ?? "";
+  return <CatalogBrowser {...props} initialSet={set} initialQuery={q} />;
 }
 
 /** Setteki en uzun kitabın yüksekliği: kısa (yatay) kitapların altında gereksiz boşluk kalmaz, alt yazılar hizalı durur. */
@@ -42,24 +46,63 @@ export function CatalogBrowser({
   t,
   initialSet = "",
   initialQuery = "",
-}: Props & { initialSet?: string; initialQuery?: string }) {
+}: Props) {
   const [activeSet, setActiveSet] = useState(initialSet);
   const [query, setQuery] = useState(initialQuery);
   const [openId, setOpenId] = useState<number | null>(null);
   // Her set için görüntülenen kitap sayısı; key = set.id
   const [limits, setLimits] = useState<Record<number, number>>({});
 
+  // initialSet veya initialQuery prop'u dışarıdan değiştiğinde render anında senkronize et
+  const [prevInitialSet, setPrevInitialSet] = useState(initialSet);
+  if (prevInitialSet !== initialSet) {
+    setPrevInitialSet(initialSet);
+    setActiveSet(initialSet);
+  }
+
+  const [prevInitialQuery, setPrevInitialQuery] = useState(initialQuery);
+  if (prevInitialQuery !== initialQuery) {
+    setPrevInitialQuery(initialQuery);
+    setQuery(initialQuery);
+  }
+
+  // Tarayıcı geri/ileri düğmelerinde URL'deki parametreleri state'e yansıt
+  useEffect(() => {
+    const handlePopState = () => {
+      const sp = new URLSearchParams(window.location.search);
+      setActiveSet(sp.get("set") ?? "");
+      setQuery(sp.get("q") ?? "");
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
   const booksById = useMemo(() => new Map(catalog.books.map((b) => [b.id, b])), [catalog.books]);
   const sets = useMemo(() => catalog.sets.filter((s) => s.bookIds.length > 0), [catalog.sets]);
 
   // URL'yi sayfa yenilemeden güncelle (paylaşılabilir filtre linkleri)
-  function syncUrl(nextSet: string, nextQuery: string) {
-    const params = new URLSearchParams();
-    if (nextSet) params.set("set", nextSet);
-    if (nextQuery.trim()) params.set("q", nextQuery.trim());
+  function syncUrl(nextSet: string, nextQuery: string, replace = false) {
+    const params = new URLSearchParams(window.location.search);
+    if (nextSet) {
+      params.set("set", nextSet);
+    } else {
+      params.delete("set");
+    }
+    if (nextQuery.trim()) {
+      params.set("q", nextQuery.trim());
+    } else {
+      params.delete("q");
+    }
     const qs = params.toString();
-    window.history.replaceState(null, "", qs ? `?${qs}` : window.location.pathname);
+    const newUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+    if (replace) {
+      window.history.replaceState(null, "", newUrl);
+    } else {
+      window.history.pushState(null, "", newUrl);
+    }
   }
+
+  const activeNorm = activeSet.trim().toLowerCase();
 
   const groups = useMemo(() => {
     const q = normalize(query.trim());
@@ -69,8 +112,12 @@ export function CatalogBrowser({
         .filter(Boolean)
         .some((v) => normalize(v!).includes(q));
     };
+    const matchesSet = (s: CatalogSet) => {
+      if (!activeNorm) return true;
+      return s.slug.toLowerCase() === activeNorm || String(s.id) === activeNorm;
+    };
     return sets
-      .filter((s) => !activeSet || s.slug === activeSet)
+      .filter(matchesSet)
       .map((s) => {
         const label = setName(s, locale);
         const otherLabel = locale === "ug" ? s.nameTr : (s.nameUg ?? "");
@@ -80,10 +127,10 @@ export function CatalogBrowser({
         return { set: s, label, books };
       })
       .filter((g) => g.books.length > 0);
-  }, [sets, activeSet, query, locale, booksById]);
+  }, [sets, activeNorm, query, locale, booksById]);
 
   const total = groups.reduce((n, g) => n + g.books.length, 0);
-  const filtered = !!activeSet || !!query.trim();
+  const filtered = !!activeNorm || !!query.trim();
 
   // Pencere: kitabın setindeki TÜM kitaplar gezilir (filtreden bağımsız)
   const openBook = openId != null ? booksById.get(openId) : undefined;
@@ -102,30 +149,36 @@ export function CatalogBrowser({
               value={query}
               onChange={(e) => {
                 setQuery(e.target.value);
-                syncUrl(activeSet, e.target.value);
+                syncUrl(activeSet, e.target.value, true);
               }}
               placeholder={t.search}
               className="w-full rounded-full border border-line bg-surface py-2.5 pe-4 ps-10 text-ink outline-none transition placeholder:text-muted/80 focus:border-primary focus:ring-2 focus:ring-primary/15"
             />
           </label>
           <div className="flex flex-wrap gap-2" role="group" aria-label={t.allSets}>
-            {[{ slug: "", label: t.allSets, count: catalog.books.length }, ...sets.map((s) => ({ slug: s.slug, label: setName(s, locale), count: s.bookIds.length }))].map(
-              (chip) => (
+            {[
+              { id: 0, slug: "", label: t.allSets, count: catalog.books.length },
+              ...sets.map((s) => ({ id: s.id, slug: s.slug, label: setName(s, locale), count: s.bookIds.length })),
+            ].map((chip) => {
+              const isSelected = chip.slug
+                ? activeNorm === chip.slug.toLowerCase() || activeNorm === String(chip.id)
+                : !activeNorm;
+              return (
                 <button
                   key={chip.slug || "all"}
                   type="button"
-                  aria-pressed={activeSet === chip.slug}
+                  aria-pressed={isSelected}
                   onClick={() => {
                     setActiveSet(chip.slug);
-                    syncUrl(chip.slug, query);
+                    syncUrl(chip.slug, query, false);
                   }}
                   className="rounded-full border border-line bg-surface px-3.5 py-2 text-sm text-body transition hover:border-line-strong hover:text-ink aria-pressed:border-primary aria-pressed:bg-primary aria-pressed:text-surface"
                 >
                   {chip.label}
                   <span className="ms-1.5 opacity-60">{chip.count}</span>
                 </button>
-              ),
-            )}
+              );
+            })}
           </div>
         </div>
         <div className="mt-3 flex items-center gap-3 text-sm text-muted" aria-live="polite">
@@ -136,7 +189,7 @@ export function CatalogBrowser({
               onClick={() => {
                 setActiveSet("");
                 setQuery("");
-                syncUrl("", "");
+                syncUrl("", "", false);
               }}
               className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-primary hover:bg-soft"
             >
