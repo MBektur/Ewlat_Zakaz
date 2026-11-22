@@ -22,7 +22,7 @@ export function PriceTag({ pricing, locale, template, untilTemplate, className }
     <span className={className}>
       {template ? fill(template, { price: text }) : text}
       {untilTemplate && isCampaign && endsAt && (
-        <span className="block text-[0.8em] font-semibold opacity-80">
+        <span className="block text-sm font-semibold opacity-80">
           {fill(untilTemplate, { date: formatDate(endsAt, locale) })}
         </span>
       )}

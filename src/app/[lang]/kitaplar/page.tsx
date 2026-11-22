@@ -1,3 +1,4 @@
+import { localePath } from "@/i18n/paths";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
@@ -25,8 +26,8 @@ export default async function CatalogPage() {
           <p className="mt-5 max-w-2xl text-lg text-body">{dict.catalog.subtitle}</p>
         </div>
         <Link
-          href={`/${locale}/on-siparis`}
-          className="btn-sun inline-flex shrink-0 items-center gap-3 self-start rounded-full px-6 py-3.5 font-extrabold md:self-auto"
+          href={localePath(locale, "preorder")}
+          className="btn-coral inline-flex shrink-0 items-center gap-3 self-start rounded-full px-6 py-3.5 font-extrabold md:self-auto"
         >
           <ShoppingBag className="size-5" strokeWidth={2.2} />
           <span>

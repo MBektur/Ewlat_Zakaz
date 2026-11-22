@@ -1,5 +1,6 @@
 import { LogoMark } from "@/components/site/Logo";
 import { LoginForm } from "@/components/admin/LoginForm";
+import { isDemo } from "@/lib/demo";
 
 export const metadata = { title: "Giriş" };
 
@@ -14,7 +15,13 @@ export default function LoginPage() {
             <p className="text-sm text-muted">Yönetim paneli</p>
           </div>
         </div>
-        <LoginForm />
+        {isDemo() ? (
+          <p className="rounded-2xl bg-soft px-4 py-3 text-sm leading-relaxed text-body">
+            Önizleme modundasınız: veri tabanı bağlı olmadığı için yönetim paneli kapalı.
+          </p>
+        ) : (
+          <LoginForm />
+        )}
       </div>
     </main>
   );

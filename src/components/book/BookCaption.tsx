@@ -26,9 +26,9 @@ export function BookCaption({ book, locale, setLabel, untitled, volumeLabel, pla
         >
           {label.title}
         </p>
-      ) : (
+      ) : book.isPlaceholder ? (
         <p className="text-sm italic text-muted">{untitled}</p>
-      )}
+      ) : null}
       <p className="text-sm text-muted">
         {[label.topic, setLabel, book.position ? fill(volumeLabel, { n: book.position }) : null]
           .filter(Boolean)

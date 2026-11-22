@@ -13,7 +13,12 @@
     "db:studio": "drizzle-kit studio",
     "db:seed": "tsx scripts/seed.ts",
     "import:books": "tsx scripts/import-books.ts",
-    "covers:prepare": "tsx scripts/prepare-covers.ts"
+    "covers:prepare": "tsx scripts/prepare-covers.ts",
+    "geo:build": "tsx scripts/build-geo.ts",
+    "predev": "npm run geo:build",
+    "prebuild": "npm run geo:build",
+    "titles:apply": "tsx scripts/apply-titles.ts",
+    "covers:import": "tsx scripts/import-covers.ts"
   },
   "dependencies": {
     "csv-parse": "^7.0.3",
@@ -34,6 +39,7 @@
     "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "country-state-city": "^3.2.1",
     "drizzle-kit": "^0.31.11",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",

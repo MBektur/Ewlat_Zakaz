@@ -14,12 +14,20 @@
   "hero": {
     "eyebrow": "Uygurca çocuk kitapları · Ön sipariş",
     "title": "Uygur Çocukları İçin En Güzel Kitaplar!",
-    "highlight": "154+",
+    "highlight": "154",
     "subtitle": "Arap harfli Uygurca çocuk kitabı, tek koleksiyonda!",
     "subtitle2": "Kitaplar basıma hazırlanıyor. Ön siparişinizi şimdi bırakın, basım tamamlanınca kapınıza gelsin.",
     "ctaPreorder": "Ön Sipariş Ver",
     "ctaBrowse": "Kitapları incele",
-    "priceBadge": "Tüm koleksiyon {price}"
+    "priceBadge": "Tüm koleksiyon {price}",
+    "title1": "Uygur Çocukları İçin",
+    "title2": "En Güzel Kitaplar!",
+    "bubble": "Ana dilde her sayfa bir macera!",
+    "chips": [
+      "Ana dilde",
+      "Şimdilik ödeme yok",
+      "Kargo ile teslim"
+    ]
   },
   "carousel": {
     "title": "Kitaplarımız",
@@ -31,7 +39,7 @@
   },
   "features": [
     {
-      "title": "154+ Kitap",
+      "title": "154 Kitap",
       "text": "Geniş kitap koleksiyonu"
     },
     {
@@ -90,17 +98,65 @@
       "rateLimit": "Kısa sürede çok fazla talep gönderildi. Lütfen biraz sonra tekrar deneyin.",
       "generic": "Bir sorun oluştu, talebiniz kaydedilemedi. Lütfen tekrar deneyin.",
       "quantity": "Adet 1 ile 20 arasında olmalı.",
-      "closed": "Ön sipariş şu anda kapalı."
+      "closed": "Ön sipariş şu anda kapalı.",
+      "email": "Geçerli bir e-posta adresi yazın.",
+      "country": "Lütfen ülke seçin.",
+      "region": "Lütfen seçim yapın.",
+      "city": "Lütfen şehir veya ilçe yazın ya da seçin.",
+      "postalCode": "Posta kodu geçersiz.",
+      "delivery": "Teslimat tercihi seçin.",
+      "recipientName": "Alıcının adını soyadını yazın.",
+      "recipientPhone": "Alıcının geçerli telefon numarasını yazın."
     },
     "packageTitle": "Tüm koleksiyon",
-    "packageText": "154+ kitabın tamamı tek pakette. Kitaplar tek tek ya da set set satılmaz.",
+    "packageText": "154 kitabın tamamı tek pakette. Kitaplar tek tek ya da set set satılmaz.",
     "priceLabel": "Ön sipariş fiyatı",
     "campaignUntil": "{date} tarihine kadar",
     "campaignNote": "Bu fiyat ön sipariş dönemine özeldir.",
     "quantity": "Adet (takım)",
     "quantityHint": "Her takım koleksiyonun tamamını içerir.",
     "total": "Toplam",
-    "artText": "Kitaplarınız Kısa Sürede Kapınızda!"
+    "artText": "Kitaplarınız Kısa Sürede Kapınızda!",
+    "wizard": {
+      "steps": [
+        "Bilgileriniz",
+        "Teslimat adresi",
+        "Özet ve onay"
+      ],
+      "next": "Devam",
+      "back": "Geri",
+      "edit": "Düzenle",
+      "email": "E-posta",
+      "optional": "isteğe bağlı",
+      "giftTitle": "Hediye olarak başka birine gönder",
+      "giftText": "Siz sipariş verin, sevdiğinize biz ulaştıralım. Ödeme ve sipariş takibi sizin telefon numaranızla yapılır; pakette fiyat bilgisi yer almaz.",
+      "recipientTitle": "Alıcı bilgileri",
+      "recipientName": "Alıcının adı soyadı",
+      "recipientPhone": "Alıcının telefon numarası",
+      "country": "Ülke",
+      "select": "Seçin",
+      "loading": "Yükleniyor…",
+      "regionTr": "İl",
+      "cityTr": "İlçe",
+      "neighborhoodTr": "Mahalle",
+      "regionOther": "Eyalet / bölge",
+      "cityOther": "Şehir",
+      "neighborhoodOther": "Mahalle / semt (isteğe bağlı)",
+      "addressLine": "Cadde, sokak, bina no, daire",
+      "postalCode": "Posta kodu (isteğe bağlı)",
+      "deliveryTitle": "Teslimat tercihi",
+      "cargo": "Kargo",
+      "pickup": "Elden teslim",
+      "post": "Posta",
+      "summaryTitle": "Sipariş özeti",
+      "contact": "İletişim",
+      "deliverTo": "Teslimat",
+      "giftFor": "Hediye alıcısı",
+      "quantityTitle": "Kaç takım?",
+      "paymentTitle": "Ödeme",
+      "paymentText": "Şimdilik ödeme alınmaz. Basım tamamlanınca ödeme bilgisi sizinle iletişime geçilerek paylaşılacaktır."
+    },
+    "demoNotice": "Bu bir önizleme sürümüdür: siparişiniz kaydedilmedi."
   },
   "privacy": {
     "title": "Kişisel Verilerin Korunması Aydınlatma Metni",
@@ -137,5 +193,39 @@
     "title": "Sayfa bulunamadı",
     "text": "Aradığınız sayfa taşınmış ya da hiç var olmamış olabilir.",
     "back": "Ana sayfaya dön"
+  },
+  "how": {
+    "title": "Nasıl çalışır?",
+    "steps": [
+      {
+        "title": "Formu doldurun",
+        "text": "Adınızı, telefonunuzu ve adresinizi bırakın. Şimdilik ödeme alınmaz."
+      },
+      {
+        "title": "Basım tamamlanır",
+        "text": "Kitaplar basıldığında sizi arayıp bilgilendiririz."
+      },
+      {
+        "title": "Kargo ile kapınızda",
+        "text": "Koleksiyonun tamamı adresinize kargo ile gönderilir."
+      }
+    ]
+  },
+  "topbar": {
+    "ship": "Basımdan sonra kargo ile teslim",
+    "offer": "Ön sipariş: tüm koleksiyon {price}",
+    "lang": "Arap harfli Uygurca"
+  },
+  "tiles": {
+    "title": "Koleksiyonlar"
+  },
+  "why": {
+    "title": "Neden Bu Koleksiyon?"
+  },
+  "banner": {
+    "title": "Ön Sipariş Kampanyası!",
+    "text": "Tüm koleksiyon",
+    "cta": "Hemen Ön Sipariş Ver",
+    "badge": "Sınırlı süre!"
   }
 }

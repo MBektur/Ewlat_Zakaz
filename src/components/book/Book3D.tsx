@@ -66,7 +66,7 @@ export function Book3D({
   return (
     <div
       className={`book-scene book--bind-${binding} ${className}`}
-      style={{ ...style, minHeight: maxHeight + 14 }}
+      style={{ ...style, minHeight: height + 14 }}
       role="img"
       aria-label={alt}
     >

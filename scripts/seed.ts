@@ -2,31 +2,12 @@
  * Başlangıç verisini yazar. Slug'a göre günceller (upsert), bu yüzden
  * tekrar çalıştırmak güvenlidir. Ön siparişlere dokunmaz.
  */
-import path from "node:path";
-import { inArray, sql } from "drizzle-orm";
-import sharp from "sharp";
+import { and, eq, inArray, notInArray, sql } from "drizzle-orm";
 import { seedBooks, seedSets } from "../src/data/seed-data";
 import { db, pool, schema } from "./lib/db";
 
-/** public/ altındaki kapak dosyasının gerçek piksel ölçüsü. */
-async function coverDimensions(coverUrl: string) {
-  const file = path.join(process.cwd(), "public", coverUrl);
-  const meta = await sharp(file).metadata();
-  if (!meta.width || !meta.height) throw new Error(`Ölçü okunamadı: ${file}`);
-  // EXIF döndürmesi varsa (90°/270°) en ve boy yer değiştirir
-  const rotated = (meta.orientation ?? 1) >= 5;
-  return rotated ? { w: meta.height, h: meta.width } : { w: meta.width, h: meta.height };
-}
-
 async function main() {
   const { sets, books, bookSets } = schema;
-
-  for (const b of seedBooks) {
-    if (!b.coverUrl) continue;
-    const { w, h } = await coverDimensions(b.coverUrl);
-    b.coverWidth = w;
-    b.coverHeight = h;
-  }
 
   await db.transaction(async (tx) => {
     const setRows = await tx
@@ -80,6 +61,10 @@ async function main() {
       })
       .returning({ id: books.id, slug: books.slug });
     const bookId = new Map(bookRows.map((r) => [r.slug, r.id]));
+
+    // Eski geçici örnek kayıtlar (seed'de olmayan yer tutucular) silinir
+    await tx.delete(books).where(and(eq(books.isPlaceholder, true), notInArray(books.slug, seedBooks.map((b) => b.slug))));
+    await tx.delete(sets).where(and(eq(sets.isPlaceholder, true), notInArray(sets.slug, seedSets.map((x) => x.slug))));
 
     const ids = [...bookId.values()];
     await tx.delete(bookSets).where(inArray(bookSets.bookId, ids));

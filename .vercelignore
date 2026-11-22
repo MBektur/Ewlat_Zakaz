@@ -1,0 +1,5 @@
+# Yüklemeye gerek olmayan büyük kaynak dosyalar ve yerel ayarlar
+ref_imgs
+data
+.env.local
+drizzle

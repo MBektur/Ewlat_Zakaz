@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Search, X } from "lucide-react";
-import { Book3D } from "@/components/book/Book3D";
+import { Book3D, bookSize } from "@/components/book/Book3D";
 import { BookCaption } from "@/components/book/BookCaption";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
@@ -21,6 +21,10 @@ export function CatalogFromUrl(props: Props) {
   const params = useSearchParams();
   return <CatalogBrowser {...props} initialSet={params.get("set") ?? ""} initialQuery={params.get("q") ?? ""} />;
 }
+
+/** Setteki en uzun kitabın yüksekliği: kısa (yatay) kitapların altında gereksiz boşluk kalmaz, alt yazılar hizalı durur. */
+const rowHeight = (books: CatalogBook[]) =>
+  Math.max(...books.map((b) => bookSize(b.coverHeight / b.coverWidth, b.thicknessMm, 128, 180).height)) + 14;
 
 const normalize = (s: string) =>
   s
@@ -77,8 +81,8 @@ export function CatalogBrowser({
 
   return (
     <div>
-      <div className="sticky top-0 z-30 -mx-4 border-b border-line/70 bg-bg/90 px-4 py-4 backdrop-blur-md sm:-mx-6 sm:px-6">
-        <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
+      <div className="border-b border-line/70 pb-5">
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-start">
           <label className="relative block lg:w-80">
             <span className="sr-only">{t.searchLabel}</span>
             <Search className="pointer-events-none absolute start-3.5 top-1/2 size-4 -translate-y-1/2 text-muted" />
@@ -93,7 +97,7 @@ export function CatalogBrowser({
               className="w-full rounded-full border border-line bg-surface py-2.5 pe-4 ps-10 text-ink outline-none transition placeholder:text-muted/80 focus:border-primary focus:ring-2 focus:ring-primary/15"
             />
           </label>
-          <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 lg:mx-0 lg:flex-wrap lg:px-0 lg:pb-0" role="group" aria-label={t.allSets}>
+          <div className="flex min-w-0 flex-wrap gap-2 lg:flex-1" role="group" aria-label={t.allSets}>
             {[{ slug: "", label: t.allSets, count: catalog.books.length }, ...sets.map((s) => ({ slug: s.slug, label: setName(s, locale), count: s.bookIds.length }))].map(
               (chip) => (
                 <button
@@ -104,7 +108,7 @@ export function CatalogBrowser({
                     setActiveSet(chip.slug);
                     syncUrl(chip.slug, query);
                   }}
-                  className="shrink-0 whitespace-nowrap rounded-full border border-line bg-surface px-3.5 py-2 text-sm text-body transition hover:border-line-strong hover:text-ink aria-pressed:border-primary aria-pressed:bg-primary aria-pressed:text-surface"
+                  className="rounded-full border border-line bg-surface px-3.5 py-2 text-sm text-body transition hover:border-line-strong hover:text-ink aria-pressed:border-primary aria-pressed:bg-primary aria-pressed:text-surface"
                 >
                   {chip.label}
                   <span className="ms-1.5 opacity-60">{chip.count}</span>
@@ -154,13 +158,15 @@ export function CatalogBrowser({
               <ul className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                 {books.map((book) => (
                   <li key={book.id} className="flex flex-col items-center gap-3">
-                    <Book3D
-                      book={book}
-                      maxWidth={128}
-                      maxHeight={180}
-                      alt={bookLabel(book, locale).title ?? t.untitled}
-                      placeholderLabel={t.placeholderBadge}
-                    />
+                    <div className="flex items-end" style={{ minHeight: rowHeight(books) }}>
+                      <Book3D
+                        book={book}
+                        maxWidth={128}
+                        maxHeight={180}
+                        alt={bookLabel(book, locale).title ?? `${label} · ${fill(t.volume, { n: book.position })}`}
+                        placeholderLabel={t.placeholderBadge}
+                      />
+                    </div>
                     <BookCaption
                       book={book}
                       locale={locale}

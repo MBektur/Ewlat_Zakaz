@@ -5,6 +5,7 @@ import { updateTag } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { db, schema } from "@/db";
+import { isDemo } from "@/lib/demo";
 import { checkPassword, createSession, destroySession, requireAdmin } from "@/lib/auth";
 import { deleteMediaByUrl, storeCover } from "@/lib/media";
 import { CATALOG_TAG, SETTINGS_TAG } from "@/lib/queries";
@@ -22,6 +23,7 @@ const bool = (fd: FormData, key: string) => fd.get(key) === "on";
 // ───────────── Oturum ─────────────
 
 export async function login(_prev: FormResult, fd: FormData): Promise<FormResult> {
+  if (isDemo()) return { error: "Önizleme modunda yönetim paneli kapalı." };
   if (!checkPassword(str(fd, "password"))) {
     await new Promise((r) => setTimeout(r, 800)); // kaba kuvvet denemelerini yavaşlat
     return { error: "Şifre hatalı." };

@@ -7,6 +7,7 @@ import { deletePreorder, updatePreorderNote, updatePreorderStatus } from "@/lib/
 import { AutoSubmitSelect } from "@/components/admin/AutoSubmitSelect";
 import { ConfirmButton } from "@/components/admin/ConfirmButton";
 import { Loading, PageTitle, btnGhost, inputCls } from "@/components/admin/ui";
+import { deliveryLabels, formatAddress } from "@/lib/address";
 import { formatTry } from "@/lib/pricing";
 
 export const metadata = { title: "Siparişler" };
@@ -77,7 +78,7 @@ async function Orders({ searchParams }: { searchParams: PageProps<"/admin">["sea
         <p className="rounded-2xl bg-surface p-10 text-center text-muted shadow-soft">Henüz sipariş yok.</p>
       ) : (
         <div className="overflow-x-auto rounded-2xl bg-surface shadow-soft">
-          <table className="w-full min-w-[960px] text-sm">
+          <table className="w-full min-w-[1040px] text-sm">
             <thead className="border-b border-line text-start text-xs uppercase tracking-wide text-muted">
               <tr>
                 <th className="px-4 py-3 text-start">#</th>
@@ -104,9 +105,22 @@ async function Orders({ searchParams }: { searchParams: PageProps<"/admin">["sea
                     <a href={`tel:${r.phone.replace(/[^\d+]/g, "")}`} className="mt-0.5 block text-primary" dir="ltr">
                       {r.phone}
                     </a>
+                    {r.email && (
+                      <a href={`mailto:${r.email}`} className="block break-all text-xs text-body" dir="ltr">
+                        {r.email}
+                      </a>
+                    )}
+                    {r.isGift && (
+                      <span className="mt-1 block rounded-lg bg-soft px-2 py-1 text-xs text-body">
+                        🎁 Hediye → <b>{r.recipientName}</b> <span dir="ltr">{r.recipientPhone}</span>
+                      </span>
+                    )}
                     {r.note && <span className="mt-1 block max-w-56 text-xs text-muted">“{r.note}”</span>}
                   </td>
-                  <td className="max-w-64 px-4 py-3 text-body">{r.address}</td>
+                  <td className="max-w-72 px-4 py-3 text-body">
+                    {formatAddress(r)}
+                    <span className="mt-1 block text-xs text-muted">Teslimat: {deliveryLabels[r.deliveryMethod] ?? r.deliveryMethod}</span>
+                  </td>
                   <td className="px-4 py-3 text-end font-bold">{r.quantity}</td>
                   <td className="whitespace-nowrap px-4 py-3 text-end">
                     {formatTry(r.quantity * r.unitPriceTry, "tr")}

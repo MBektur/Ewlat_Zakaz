@@ -19,7 +19,7 @@ export function Loading() {
 
 export const inputCls =
   "w-full rounded-xl border border-line bg-surface px-3 py-2.5 outline-none focus:border-primary focus:ring-4 focus:ring-primary/10";
-export const btnPrimary = "btn-blue inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-extrabold";
+export const btnPrimary = "btn-coral inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-extrabold";
 export const btnGhost =
   "inline-flex items-center justify-center gap-2 rounded-full border border-line bg-surface px-4 py-2 text-sm font-bold text-body hover:border-line-strong hover:text-ink";
 

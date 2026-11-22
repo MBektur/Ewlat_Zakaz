@@ -91,7 +91,22 @@ export const preorders = pgTable(
     id: integer().primaryKey().generatedAlwaysAsIdentity(),
     fullName: text("full_name").notNull(),
     phone: text().notNull(),
+    email: text(),
+    /** ISO ülke kodu (TR, KZ, DE...). */
+    country: text().notNull().default("TR"),
+    /** İl / eyalet / bölge adı. Bölge listesi olmayan ülkelerde boş. */
+    region: text(),
+    /** İlçe / şehir. */
+    city: text(),
+    neighborhood: text(),
+    /** Cadde, sokak, bina no, daire. */
     address: text().notNull(),
+    postalCode: text("postal_code"),
+    /** cargo | pickup | post */
+    deliveryMethod: text("delivery_method").notNull().default("cargo"),
+    isGift: boolean("is_gift").notNull().default(false),
+    recipientName: text("recipient_name"),
+    recipientPhone: text("recipient_phone"),
     note: text(),
     locale: text().notNull(),
     status: preorderStatus().notNull().default("new"),

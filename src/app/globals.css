@@ -1,29 +1,33 @@
 @import "tailwindcss";
 
 /* ───────────────────────── Tasarım sistemi ─────────────────────────
-   ref_imgs/ref-ui.jpeg: açık gök mavisi zemin, beyaz yuvarlak paneller,
-   lacivert başlıklar, mavi ana renk, sarı çağrı butonu, renkli ikon baloncukları. */
+   Sıcak krem zemin, derin lacivert başlıklar, safran sarısı çağrı butonu,
+   etles (atlas ipeği) renkleri: mercan, turkuaz, safran. Kapaklar renkli olduğu
+   için arayüz düz ve okunaklı tutuldu; hiçbir dekor metnin arkasına girmez. */
 @theme {
-  --color-bg: #f6faff;           /* sayfa zemini (açık gök) */
-  --color-surface: #ffffff;      /* kart / panel */
-  --color-soft: #e6f1fc;         /* açık mavi bölümler, aktif menü */
-  --color-line: #dbe7f4;         /* çizgiler */
-  --color-line-strong: #bfd3ea;  /* belirgin çizgi */
-  --color-ink: #1b3263;          /* başlıklar, lacivert */
-  --color-body: #3d5178;         /* metin */
-  --color-muted: #7387a8;        /* soluk metin */
-  --color-primary: #2c7be5;      /* ana mavi */
-  --color-primary-dark: #1d62c4;
-  --color-accent: #f5b31b;       /* sarı vurgu */
-  --color-sun: #ffd04a;          /* sarı buton açık ton */
-  --color-green: #5fb85a;
-  --color-orange: #f08a3a;
-  --color-purple: #8a78ee;
-  --color-sky: #cfe6fb;
+  --color-bg: #fff8f0;           /* şeftali krem zemin */
+  --color-surface: #ffffff;
+  --color-soft: #fde8d4;         /* şeftali */
+  --color-line: #f3e0cc;
+  --color-line-strong: #e6c9a8;
+  --color-ink: #2d3b4b;          /* başlıklar */
+  --color-body: #48566a;
+  --color-muted: #75818f;
+  --color-primary: #d9482b;      /* mercan (buton, bağlantı) */
+  --color-primary-dark: #b93a20;
+  --color-coral: #ef6a4d;
+  --color-accent: #f5b335;       /* hardal */
+  --color-sun: #ffc94d;
+  --color-teal: #2a9d8f;
+  --color-teal-dark: #17796f;
+  --color-green: #4fa34a;
+  --color-orange: #ee7d34;
+  --color-purple: #8a6fe0;
+  --color-sky: #cfe9f0;
   --color-success: #2f9a5c;
   --color-danger: #d0453a;
 
-  --font-display: var(--font-nunito), ui-rounded, system-ui, sans-serif;
+  --font-display: var(--font-fredoka), var(--font-nunito), ui-rounded, system-ui, sans-serif;
   --font-sans: var(--font-nunito), ui-rounded, system-ui, sans-serif;
   --font-ug: var(--font-lateef), "Noto Naskh Arabic", "Geeza Pro", serif;
 
@@ -52,8 +56,8 @@ html[lang="ug"] body {
   line-height: 1.75;
 }
 .font-display {
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: 0;
 }
 html[lang="ug"] .font-display {
   font-family: var(--font-ug);
@@ -61,22 +65,22 @@ html[lang="ug"] .font-display {
   letter-spacing: 0;
 }
 
-/* Sarı çağrı butonu (ref: "Ön Sipariş Ver") */
-.btn-sun {
-  background: linear-gradient(180deg, var(--color-sun), var(--color-accent));
-  color: var(--color-ink);
-  box-shadow: 0 2px 0 rgb(201 132 0 / 0.35), 0 14px 26px -12px rgb(201 132 0 / 0.55);
-}
-.btn-sun:hover {
-  filter: brightness(1.04) saturate(1.05);
-}
-/* Mavi buton (ref: "Siparişi Gönder") */
-.btn-blue {
-  background: linear-gradient(180deg, #4a93f0, var(--color-primary-dark));
+/* Mercan çağrı butonu */
+.btn-coral {
+  background: linear-gradient(180deg, #f0745a, #d9482b);
   color: #fff;
-  box-shadow: 0 2px 0 rgb(18 70 150 / 0.3), 0 14px 26px -12px rgb(29 98 196 / 0.6);
+  box-shadow: 0 2px 0 rgb(150 40 18 / 0.35), 0 14px 26px -12px rgb(217 72 43 / 0.6);
 }
-.btn-blue:hover {
+.btn-coral:hover {
+  filter: brightness(1.05);
+}
+/* Teal ikincil buton */
+.btn-teal {
+  background: linear-gradient(180deg, #34b0a1, #17796f);
+  color: #fff;
+  box-shadow: 0 2px 0 rgb(10 80 72 / 0.3), 0 14px 26px -12px rgb(23 121 111 / 0.55);
+}
+.btn-teal:hover {
   filter: brightness(1.06);
 }
 /* Başlık altı sarı fırça çizgisi */
@@ -347,47 +351,41 @@ html[lang="ug"] .font-display {
 }
 
 
-/* ───────────────────────── Referanstan alınan illüstrasyonlar ─────────────────────────
-   Kenarları yumuşak solar; böylece görsel arka planla kaynaşır. RTL'de iç taraf tersine döner. */
-.art-fade {
-  --fade-x: 26%;
-  --fade-y: 14%;
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--fade-x)), linear-gradient(to bottom, transparent 0, #000 var(--fade-y));
-  mask-image: linear-gradient(to right, transparent 0, #000 var(--fade-x)), linear-gradient(to bottom, transparent 0, #000 var(--fade-y));
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
+.book-swiper {
+  overflow: visible;
 }
-[dir="rtl"] .art-fade {
-  -webkit-mask-image: linear-gradient(to left, transparent 0, #000 var(--fade-x)), linear-gradient(to bottom, transparent 0, #000 var(--fade-y));
-  mask-image: linear-gradient(to left, transparent 0, #000 var(--fade-x)), linear-gradient(to bottom, transparent 0, #000 var(--fade-y));
+.book-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+  justify-content: center;
 }
+.book-swiper-pagination .swiper-pagination-bullet {
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 11px;
+  height: 11px;
+  margin: 0 6px !important;
+  background: var(--color-line-strong);
+  opacity: 1;
+  transition: transform 300ms var(--ease-book), background 300ms;
+}
+.book-swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--color-primary);
+  transform: scale(1.15);
+}
+
 
 /* Carousel: kitaplar sakin durur, ortadaki öne çıkar */
 .book-swiper .book-slide {
-  transform: scale(0.88);
+  transform: scale(0.92);
   transform-origin: 50% 100%;
   transition: transform 700ms var(--ease-book), opacity 700ms;
   opacity: 0.96;
 }
 .book-swiper .swiper-slide-active .book-slide {
-  transform: scale(1.1);
+  transform: scale(1.06);
   opacity: 1;
 }
-.book-floor {
-  position: absolute;
-  inset-inline: -8%;
-  bottom: 3.2rem;
-  height: 5rem;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 30%, rgb(27 50 99 / 0.09), rgb(27 50 99 / 0.03) 55%, transparent 72%);
-  pointer-events: none;
-}
 
-/* Köşe yaprakları: dış kenar sert, iç kenarlar yumuşak solar */
-.art-fade-end {
-  -webkit-mask-image: linear-gradient(to right, #000 0, #000 22%, transparent 88%), linear-gradient(to bottom, transparent 0, #000 18%, #000 70%, transparent 100%);
-  mask-image: linear-gradient(to right, #000 0, #000 22%, transparent 88%), linear-gradient(to bottom, transparent 0, #000 18%, #000 70%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
-}
 

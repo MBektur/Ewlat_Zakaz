@@ -1,8 +1,10 @@
 import { eq } from "drizzle-orm";
 import { db, schema } from "@/db";
+import { isDemo } from "@/lib/demo";
 
 /** Admin'den yüklenen kapakları sunar. Kimlik rastgele ve değişmez, uzun süre önbelleğe alınabilir. */
 export async function GET(_req: Request, ctx: RouteContext<"/media/[id]">) {
+  if (isDemo()) return new Response("Not found", { status: 404 });
   const { id } = await ctx.params;
   if (!/^[a-f0-9]{24}$/.test(id)) return new Response("Not found", { status: 404 });
   const [row] = await db.select().from(schema.media).where(eq(schema.media.id, id));

@@ -2,6 +2,8 @@ import "server-only";
 import { asc, eq } from "drizzle-orm";
 import { cacheLife, cacheTag } from "next/cache";
 import { db, schema } from "@/db";
+import { demoCatalog, demoFeatured, demoPricing } from "./demo-data";
+import { isDemo } from "./demo";
 import type { Catalog, CatalogBook, CatalogSet, Pricing } from "./types";
 
 /** Admin değişikliklerinden sonra updateTag(CATALOG_TAG) ile tazelenir. */
@@ -13,6 +15,7 @@ export async function getCatalog(): Promise<Catalog> {
   "use cache";
   cacheLife("hours");
   cacheTag(CATALOG_TAG);
+  if (isDemo()) return demoCatalog();
 
   const { sets, books, bookSets } = schema;
 
@@ -68,6 +71,7 @@ export async function getFeaturedBooks(): Promise<CatalogBook[]> {
   "use cache";
   cacheLife("hours");
   cacheTag(CATALOG_TAG);
+  if (isDemo()) return demoFeatured();
 
   const { books } = schema;
   const featured = await db
@@ -91,6 +95,7 @@ export async function getPricing(): Promise<Pricing> {
 
 /** Önbelleksiz okuma (sipariş kaydında güncel fiyat için). */
 export async function readPricing(): Promise<Pricing> {
+  if (isDemo()) return demoPricing;
   const [row] = await db.select().from(schema.settings).where(eq(schema.settings.id, 1));
   return {
     campaignPriceTry: row?.campaignPriceTry ?? 8500,

@@ -20,7 +20,7 @@ export function LoginForm() {
         />
       </label>
       {state?.error && <p className="text-sm font-semibold text-danger">{state.error}</p>}
-      <button type="submit" disabled={pending} className="btn-blue flex w-full items-center justify-center gap-2 rounded-full py-3 font-extrabold">
+      <button type="submit" disabled={pending} className="btn-coral flex w-full items-center justify-center gap-2 rounded-full py-3 font-extrabold">
         {pending ? <Loader2 className="size-4 animate-spin" /> : <LockKeyhole className="size-4" />}
         Giriş yap
       </button>

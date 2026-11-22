@@ -1,40 +1,40 @@
-import { FooterScene } from "@/components/art/FooterScene";
-import { LeafCluster } from "@/components/art/Leaves";
+import { localePath } from "@/i18n/paths";
 import Link from "next/link";
 import { Heart } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { BrandText, LogoMark } from "./Logo";
 
-/** Alt bilgi sahnesi özgün SVG'dir (FooterScene). */
 export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
-    <footer className="relative mt-16 min-h-[180px] overflow-hidden bg-gradient-to-b from-[#daebfd] to-[#c4e2fc]">
-      {/* Üstte dalgalı geçiş (sayfa zemininden alt bilgiye) */}
-      <svg viewBox="0 0 1440 40" preserveAspectRatio="none" className="relative z-10 block h-8 w-full text-bg" aria-hidden="true">
-        <path d="M0 0h1440v14c-220 22-440 24-700 6S250 4 0 22Z" fill="currentColor" />
+    <footer className="mt-20 bg-teal-dark text-white">
+      <svg viewBox="0 0 1440 40" preserveAspectRatio="none" className="block h-8 w-full -translate-y-px text-bg" aria-hidden="true">
+        <path d="M0 0h1440v14c-240 24-480 26-720 8S240 2 0 22Z" fill="currentColor" />
       </svg>
-
-      <LeafCluster className="pointer-events-none absolute bottom-2 start-0 hidden h-28 w-auto sm:block rtl:-scale-x-100" />
-      <FooterScene className="pointer-events-none absolute bottom-0 end-0 hidden h-[92%] w-auto sm:block rtl:-scale-x-100" />
-
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-5 px-4 pb-8 pt-4 sm:flex-row sm:items-center sm:px-6 sm:pb-10">
-        <Link href={`/${locale}`} className="flex items-center gap-3" aria-label={dict.site.brand}>
-          <LogoMark className="size-14" />
-          <BrandText brand={dict.site.brand} className="text-2xl" />
-        </Link>
-        <div className="hidden h-14 w-px bg-ink/70 sm:mx-6 sm:block" aria-hidden="true" />
+      <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 pb-10 pt-4 sm:px-6 md:grid-cols-[1fr_auto]">
         <div>
-          <p className="flex items-center gap-3 text-lg font-extrabold leading-tight text-ink">
-            <Heart className="size-8 shrink-0 text-danger" strokeWidth={1.8} />
+          <div className="flex items-center gap-3">
+            <span className="rounded-2xl bg-white p-1.5">
+              <LogoMark className="size-11" />
+            </span>
+            <BrandText brand={dict.site.brand} className="text-2xl" light />
+          </div>
+          <nav className="mt-6 flex flex-wrap gap-x-6 gap-y-2 font-bold" aria-label={dict.site.brand}>
+            <Link href={localePath(locale, "books")} className="text-white/90 hover:text-sun">{dict.nav.books}</Link>
+            <Link href={localePath(locale, "preorder")} className="text-white/90 hover:text-sun">{dict.nav.preorder}</Link>
+            <Link href={localePath(locale, "privacy")} className="text-white/90 hover:text-sun">{dict.footer.privacy}</Link>
+          </nav>
+        </div>
+        <div className="rounded-3xl bg-white px-6 py-5 text-ink shadow-lift">
+          <p className="font-display flex items-center gap-3 text-xl leading-tight">
+            <Heart className="size-7 shrink-0 text-primary" fill="currentColor" strokeWidth={0} />
             {dict.footer.tagline}
-          </p>
-          <p className="mt-1 flex flex-wrap gap-x-4 text-xs text-muted sm:ms-11">
-            <Link href={`/${locale}/gizlilik`} className="hover:text-ink">{dict.footer.privacy}</Link>
-            {dict.footer.sampleNotice && <span>{dict.footer.sampleNotice}</span>}
           </p>
         </div>
       </div>
+      {dict.footer.sampleNotice && (
+        <p className="border-t border-white/15 px-4 py-4 text-center text-sm text-white/75">{dict.footer.sampleNotice}</p>
+      )}
     </footer>
   );
 }

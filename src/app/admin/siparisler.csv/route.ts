@@ -1,4 +1,5 @@
 import { isAdmin } from "@/lib/auth";
+import { countryName, deliveryLabels } from "@/lib/address";
 import { listPreorders, statusLabels } from "@/lib/admin-queries";
 
 const cell = (v: unknown) => {
@@ -12,14 +13,24 @@ export async function GET(request: Request) {
   if (!(await isAdmin())) return new Response("Yetkisiz", { status: 401 });
   const status = new URL(request.url).searchParams.get("status") ?? "";
   const rows = await listPreorders({ status });
-  const header = ["No", "Tarih", "Ad Soyad", "Telefon", "Adres", "Takım", "Takım fiyatı (TL)", "Tutar (TL)", "Durum", "Müşteri notu", "İç not", "Dil"];
+  const header = ["No", "Tarih", "Ad Soyad", "Telefon", "E-posta", "Ülke", "İl / Bölge", "İlçe / Şehir", "Mahalle", "Adres", "Posta kodu", "Teslimat tercihi", "Hediye mi", "Alıcı adı", "Alıcı telefonu", "Takım", "Takım fiyatı (TL)", "Tutar (TL)", "Durum", "Müşteri notu", "İç not", "Dil"];
   const lines = rows.map((r) =>
     [
       r.id,
       r.createdAt.toLocaleString("tr-TR", { timeZone: "Europe/Istanbul" }),
       r.fullName,
       r.phone,
+      r.email,
+      countryName(r.country),
+      r.region,
+      r.city,
+      r.neighborhood,
       r.address,
+      r.postalCode,
+      deliveryLabels[r.deliveryMethod] ?? r.deliveryMethod,
+      r.isGift ? "Evet" : "Hayır",
+      r.recipientName,
+      r.recipientPhone,
       r.quantity,
       r.unitPriceTry,
       r.quantity * r.unitPriceTry,

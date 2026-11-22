@@ -9,11 +9,12 @@ import { hasLocale } from "@/i18n/config";
 import { notifyNewPreorder } from "@/lib/notify";
 import { activePrice } from "@/lib/pricing";
 import { readPricing } from "@/lib/queries";
+import { isDemo } from "@/lib/demo";
+import { geoDataAvailable, loadGeo } from "@/lib/geo";
 import {
-  preorderSchema,
   readPreorderForm,
-  type PreorderErrorCode,
-  type PreorderField,
+  validateValues,
+  type FieldErrors,
   type PreorderState,
 } from "@/lib/preorder-schema";
 
@@ -39,16 +40,28 @@ export async function createPreorder(_prev: PreorderState, formData: FormData): 
     return { status: "success", name: values.fullName, phone: values.phone, quantity: values.quantity, total: 0 };
   }
 
-  const parsed = preorderSchema.safeParse(values);
-  if (!parsed.success) {
-    const fieldErrors: Partial<Record<PreorderField, PreorderErrorCode>> = {};
-    for (const issue of parsed.error.issues) {
-      const field = issue.path[0] as PreorderField;
-      fieldErrors[field] ??= field;
+  // Ülke geçerli mi, bölge/şehir seçimi listeyle uyumlu mu?
+  const dataOk = await geoDataAvailable();
+  const geo = dataOk ? await loadGeo(values.country) : null;
+  const states = geo?.states ?? [];
+  const fieldErrors: FieldErrors = validateValues(values, { hasStates: states.length > 0 });
+  if (dataOk) {
+    if (!geo) fieldErrors.country = "country";
+    if (states.length > 0 && values.region) {
+      const state = states.find((s) => s.name === values.region);
+      if (!state) fieldErrors.region = "region";
+      else if (state.cities.length > 0 && !state.cities.includes(values.city)) fieldErrors.city = "city";
     }
+  }
+  if (Object.keys(fieldErrors).length > 0) {
     return { status: "error", fieldErrors, values };
   }
-  const data = parsed.data;
+
+  // Önizleme modu: veri tabanı yok, kayıt yapılmaz
+  if (isDemo()) {
+    const { price } = activePrice(await readPricing(), new Date());
+    return { status: "success", name: values.fullName.trim(), phone: values.phone.trim(), quantity: values.quantity, total: price * values.quantity, demo: true };
+  }
 
   try {
     const pricing = await readPricing();
@@ -71,11 +84,21 @@ export async function createPreorder(_prev: PreorderState, formData: FormData): 
     const [row] = await db
       .insert(preorders)
       .values({
-        fullName: data.fullName,
-        phone: data.phone,
-        address: data.address,
-        note: data.note || null,
-        quantity: data.quantity,
+        fullName: values.fullName.trim(),
+        phone: values.phone.trim(),
+        email: values.email.trim() || null,
+        country: values.country,
+        region: values.region.trim() || null,
+        city: values.city.trim(),
+        neighborhood: values.neighborhood.trim() || null,
+        address: values.address.trim(),
+        postalCode: values.postalCode.trim() || null,
+        deliveryMethod: values.deliveryMethod,
+        note: values.note.trim() || null,
+        isGift: values.isGift,
+        recipientName: values.isGift ? values.recipientName.trim() : null,
+        recipientPhone: values.isGift ? values.recipientPhone.trim() : null,
+        quantity: values.quantity,
         unitPriceTry: price,
         locale,
         consentAt: new Date(),
@@ -83,20 +106,20 @@ export async function createPreorder(_prev: PreorderState, formData: FormData): 
       })
       .returning({ id: preorders.id });
 
-    const total = price * data.quantity;
+    const total = price * values.quantity;
     // Yanıtı bekletmeden bildirim gönder
     after(() =>
       notifyNewPreorder({
         id: row.id,
-        fullName: data.fullName,
-        phone: data.phone,
-        quantity: data.quantity,
+        fullName: values.fullName.trim(),
+        phone: values.phone.trim(),
+        quantity: values.quantity,
         total,
         locale,
       }),
     );
 
-    return { status: "success", name: data.fullName, phone: data.phone, quantity: data.quantity, total };
+    return { status: "success", name: values.fullName.trim(), phone: values.phone.trim(), quantity: values.quantity, total };
   } catch (err) {
     console.error("Ön sipariş kaydedilemedi:", err);
     return { status: "error", fieldErrors: {}, formError: "generic", values };

@@ -1,3 +1,4 @@
+import { localePath } from "@/i18n/paths";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
@@ -25,7 +26,7 @@ export default async function PrivacyPage() {
           </section>
         ))}
       </div>
-      <Link href={`/${locale}/on-siparis`} className="mt-10 inline-block text-sm font-medium text-primary hover:underline">
+      <Link href={localePath(locale, "preorder")} className="mt-10 inline-block text-sm font-medium text-primary hover:underline">
         {t.back}
       </Link>
     </article>

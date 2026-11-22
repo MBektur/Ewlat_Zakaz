@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { Nunito, Lateef } from "next/font/google";
+import { Fredoka, Nunito, Lateef } from "next/font/google";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { localeDir, locales } from "@/i18n/config";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { Topbar } from "@/components/site/Topbar";
 import "../globals.css";
 
+const fredoka = Fredoka({ subsets: ["latin", "latin-ext"], variable: "--font-fredoka" });
 const nunito = Nunito({ subsets: ["latin", "latin-ext"], variable: "--font-nunito" });
 const lateef = Lateef({
   subsets: ["arabic", "latin"],
@@ -34,9 +36,10 @@ export default async function SiteLayout({ children }: LayoutProps<"/[lang]">) {
     <html
       lang={locale}
       dir={localeDir[locale]}
-      className={`${nunito.variable} ${lateef.variable}`}
+      className={`${fredoka.variable} ${nunito.variable} ${lateef.variable}`}
     >
       <body className="flex min-h-dvh flex-col">
+        <Topbar locale={locale} dict={dict} />
         <Header locale={locale} brand={dict.site.brand} nav={dict.nav} />
         <main className="flex-1">{children}</main>
         <Footer locale={locale} dict={dict} />

@@ -3,6 +3,7 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { ADMIN_COOKIE } from "./auth-constants";
+import { isDemo } from "./demo";
 
 const SESSION_DAYS = 7;
 
@@ -46,6 +47,7 @@ export async function destroySession() {
 }
 
 export async function isAdmin() {
+  if (isDemo()) return false;
   const value = (await cookies()).get(ADMIN_COOKIE)?.value;
   if (!value) return false;
   const i = value.lastIndexOf(".");

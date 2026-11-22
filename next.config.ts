@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Sunucu doğrulaması public/geo dosyalarını okur; Vercel'de fonksiyon paketine dahil edilmeli
+  outputFileTracingIncludes: { "/**": ["./public/geo/**/*"] },
   cacheComponents: true,
   partialPrefetching: true,
   images: {

@@ -1,5 +1,6 @@
 "use client";
 
+import { localePath, switchPath } from "@/i18n/paths";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -19,18 +20,17 @@ export function Header({ locale, brand, nav }: Props) {
   // Menü hangi sayfada açıldıysa yalnızca orada açık kalır; sayfa değişince kendiliğinden kapanır
   const [openOn, setOpenOn] = useState<string | null>(null);
   const open = openOn === pathname;
-  const rest = pathname.replace(/^\/(tr|ug)(?=\/|$)/, "");
 
   const links = [
     { href: `/${locale}`, label: nav.home, exact: true, icon: true },
-    { href: `/${locale}/kitaplar`, label: nav.books },
-    { href: `/${locale}/on-siparis`, label: nav.preorder },
+    { href: localePath(locale, "books"), label: nav.books },
+    { href: localePath(locale, "preorder"), label: nav.preorder },
   ];
   const isActive = (href: string, exact?: boolean) => (exact ? pathname === href : pathname.startsWith(href));
 
   return (
-    <header className="relative z-40">
-      <div className="mx-auto flex h-20 max-w-6xl items-center gap-4 px-4 sm:h-24 sm:px-6">
+    <header className="sticky top-0 z-50 border-b border-line bg-surface/95 backdrop-blur-md">
+      <div className="mx-auto flex h-[72px] max-w-6xl items-center gap-4 px-4 sm:px-6">
         <Link href={`/${locale}`} className="flex shrink-0 items-center gap-2.5" aria-label={brand}>
           <LogoMark />
           <BrandText brand={brand} />
@@ -44,7 +44,7 @@ export function Header({ locale, brand, nav }: Props) {
                 key={l.href}
                 href={l.href}
                 aria-current={active ? "page" : undefined}
-                className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-bold text-ink transition hover:bg-surface/70 aria-[current=page]:bg-primary aria-[current=page]:text-white aria-[current=page]:shadow-[0_8px_18px_-8px_rgb(44_123_229/0.7)]"
+                className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-bold text-ink transition hover:bg-soft aria-[current=page]:bg-soft aria-[current=page]:text-primary"
               >
                 {l.icon && <House className="size-4" strokeWidth={2.4} />}
                 {l.label}
@@ -53,7 +53,7 @@ export function Header({ locale, brand, nav }: Props) {
           })}
         </nav>
 
-        <LanguageMenu locale={locale} rest={rest} label={nav.language} />
+        <LanguageMenu locale={locale} pathname={pathname} label={nav.language} />
 
         <button
           type="button"
@@ -74,7 +74,7 @@ export function Header({ locale, brand, nav }: Props) {
               key={l.href}
               href={l.href}
               aria-current={isActive(l.href, l.exact) ? "page" : undefined}
-              className="block rounded-2xl px-4 py-3 font-bold text-ink aria-[current=page]:bg-primary aria-[current=page]:text-white"
+              className="block rounded-2xl px-4 py-3 font-bold text-ink aria-[current=page]:bg-soft aria-[current=page]:text-primary"
             >
               {l.label}
             </Link>
@@ -85,7 +85,7 @@ export function Header({ locale, brand, nav }: Props) {
   );
 }
 
-function LanguageMenu({ locale, rest, label }: { locale: Locale; rest: string; label: string }) {
+function LanguageMenu({ locale, pathname, label }: { locale: Locale; pathname: string; label: string }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -122,7 +122,7 @@ function LanguageMenu({ locale, rest, label }: { locale: Locale; rest: string; l
             <Link
               key={l}
               role="menuitem"
-              href={`/${l}${rest}`}
+              href={switchPath(pathname, l)}
               hrefLang={l}
               lang={l}
               onClick={() => setOpen(false)}

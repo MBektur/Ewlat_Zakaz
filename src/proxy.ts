@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { defaultLocale, hasLocale, type Locale } from "@/i18n/config";
+import { internalToUg, ugToInternal } from "@/i18n/paths";
 import { ADMIN_COOKIE } from "@/lib/auth-constants";
 
 function preferredLocale(request: NextRequest): Locale {
@@ -22,7 +23,21 @@ export function proxy(request: NextRequest) {
 
   const first = pathname.split("/")[1];
   if (hasLocale(first)) {
-    const response = NextResponse.next();
+    let response = NextResponse.next();
+    // Uygurca adresler: /ug/zakaz dosya yapısındaki /ug/on-siparis sayfasına yeniden yazılır;
+    // eski (Türkçe adlı) Uygurca adresler yeni adrese yönlendirilir.
+    if (first === "ug") {
+      const second = pathname.split("/")[2];
+      if (second && ugToInternal[second]) {
+        const url = request.nextUrl.clone();
+        url.pathname = pathname.replace(`/ug/${second}`, `/ug/${ugToInternal[second]}`);
+        response = NextResponse.rewrite(url);
+      } else if (second && internalToUg[second]) {
+        const url = request.nextUrl.clone();
+        url.pathname = pathname.replace(`/ug/${second}`, `/ug/${internalToUg[second]}`);
+        return NextResponse.redirect(url, 308);
+      }
+    }
     if (request.cookies.get("lang")?.value !== first) {
       response.cookies.set("lang", first, { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" });
     }
