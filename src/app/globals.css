@@ -49,6 +49,32 @@ body {
   background: var(--color-bg);
 }
 
+/* Kaydırma çubuğu: sayfada ve içeride (kitap penceresi vb.) ince, yuvarlak, mercan renkli. */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-soft);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-coral);
+  border-radius: 999px;
+  /* Çevresine iz rengi kadar boşluk bırakarak çubuğu inceltir */
+  border: 3px solid var(--color-soft);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+/* WebKit çubuğunu bilmeyen tarayıcılar (Firefox) için */
+@supports not selector(::-webkit-scrollbar) {
+  html,
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-coral) var(--color-soft);
+  }
+}
+
 /* Uygurca: Lateef küçük görünür; ölçeği büyüt, satır aralığını aç. */
 html[lang="ug"] body {
   font-family: var(--font-ug);

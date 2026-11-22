@@ -89,25 +89,31 @@ export function BookModal({ book, siblings, setLabel, locale, t, onSelect, onClo
       className="m-auto max-h-[92dvh] w-[min(94vw,980px)] overflow-hidden rounded-[2rem] bg-surface p-0 text-ink shadow-lift backdrop:bg-ink/60 backdrop:backdrop-blur-sm"
     >
       <div className="relative grid max-h-[92dvh] overflow-y-auto md:grid-cols-[minmax(280px,0.9fr)_1fr]">
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label={t.close}
-          className="absolute end-3 top-3 z-10 flex size-10 items-center justify-center rounded-full bg-surface/90 text-ink shadow-soft transition hover:bg-soft"
-        >
-          <X className="size-5" strokeWidth={2.4} />
-        </button>
+        {/* Üst bilgi: set adı, cilt numarası ve kapat butonu; içerik kayarken sabit kalır */}
+        <header className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-line bg-surface px-4 py-3 sm:px-6 md:col-span-2">
+          <div className="flex min-w-0 items-center gap-3">
+            {setLabel && (
+              <p className="truncate rounded-full bg-primary/10 px-3 py-1 text-sm font-extrabold text-primary">{setLabel}</p>
+            )}
+            <span className="shrink-0 text-sm font-bold text-muted">{fill(t.volume, { n: book.position })}</span>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label={t.close}
+            className="flex size-10 shrink-0 items-center justify-center rounded-full bg-soft text-ink transition hover:bg-line"
+          >
+            <X className="size-5" strokeWidth={2.4} />
+          </button>
+        </header>
 
-        <div className="flex items-end justify-center bg-gradient-to-b from-soft to-[#ffe9d6] px-6 pb-6 pt-12">
+        <div className="flex items-end justify-center bg-gradient-to-b from-soft to-[#ffe9d6] px-6 pb-6 pt-8">
           <Book3D key={book.id} book={book} maxWidth={260} maxHeight={340} alt={title} placeholderLabel={t.placeholderBadge} priority binding={rtl ? "right" : "right"} />
         </div>
 
-        <div className="flex flex-col p-6 pt-14 sm:p-8 sm:pt-14">
-          {setLabel && (
-            <p className="inline-flex w-fit items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-extrabold text-primary">{setLabel}</p>
-          )}
+        <div className="flex flex-col p-6 sm:p-8">
           <h2
-            className={`mt-3 text-2xl leading-snug sm:text-3xl ${label.titleIsUg ? "ug-text" : "font-display"}`}
+            className={`text-2xl leading-snug sm:text-3xl ${label.titleIsUg ? "ug-text" : "font-display"}`}
             dir={label.titleIsUg ? "rtl" : undefined}
             lang={label.titleIsUg ? "ug" : undefined}
           >
