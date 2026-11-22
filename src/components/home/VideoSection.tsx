@@ -27,26 +27,69 @@ interface Props {
  *
  * Davranış:
  *  - Sayfa ilk yüklendiğinde localStorage'da kayıt yoksa 700ms sonra modal otomatik açılır.
- *  - Thumbnail'e tıklandığında da aynı modal açılır.
- *  - Footer'daki "bir daha gösterme" checkbox'ı işaretli kapatılırsa localStorage'a kaydeder.
- *  - ESC ve backdrop tıklaması da kapatır.
+ *  - localStorage'daki "dontShow" durumu başlangıçta ve modal her açıldığında okunup checkbox'a yansıtılır.
+ *  - Checkbox işaretlendiğinde localStorage'a anında yazılır, işareti kaldırıldığında silinir.
+ *  - Thumbnail'e tıklandığında da modal açılır ve güncel checkbox durumu gösterilir.
+ *  - ESC, backdrop tıklaması veya kapat butonu ile modal kapanır.
  */
 export function VideoSection({ videoId, t }: Props) {
   const [open, setOpen] = useState(false);
   const [dontShow, setDontShow] = useState(false);
+  const dontShowRef = useRef(false);
   const checkboxId = "intro-dont-show";
   const dialogRef = useRef<HTMLDivElement>(null);
   const thumb = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
 
-  // Auto-open: ilk ziyarette
+  // dontShow state → ref senkronizasyonu
+  useEffect(() => {
+    dontShowRef.current = dontShow;
+  }, [dontShow]);
+
+  // İlk yüklemede localStorage'dan oku
   useEffect(() => {
     try {
-      if (!localStorage.getItem(STORAGE_KEY)) {
+      const isSaved = localStorage.getItem(STORAGE_KEY) === "1";
+      setDontShow(isSaved);
+      // Eğer daha önce kaydedilmemişse ilk ziyarette otomatik aç
+      if (!isSaved) {
         const timer = setTimeout(() => setOpen(true), 700);
         return () => clearTimeout(timer);
       }
     } catch {}
   }, []);
+
+  // Thumbnail'e tıklayıp manuel açtığında da localStorage'dan güncel durumu oku
+  const handleOpen = () => {
+    try {
+      const isSaved = localStorage.getItem(STORAGE_KEY) === "1";
+      setDontShow(isSaved);
+    } catch {}
+    setOpen(true);
+  };
+
+  // Checkbox değiştiğinde hem state'i hem de localStorage'ı anında senkronize et
+  const handleCheckboxChange = (checked: boolean) => {
+    setDontShow(checked);
+    dontShowRef.current = checked;
+    try {
+      if (checked) {
+        localStorage.setItem(STORAGE_KEY, "1");
+      } else {
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    } catch {}
+  };
+
+  const handleClose = () => {
+    try {
+      if (dontShowRef.current) {
+        localStorage.setItem(STORAGE_KEY, "1");
+      } else {
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    } catch {}
+    setOpen(false);
+  };
 
   // ESC ile kapat
   useEffect(() => {
@@ -56,20 +99,7 @@ export function VideoSection({ videoId, t }: Props) {
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [open, dontShow]);
-
-  function handleOpen() {
-    setOpen(true);
-  }
-
-  function handleClose() {
-    if (dontShow) {
-      try {
-        localStorage.setItem(STORAGE_KEY, "1");
-      } catch {}
-    }
-    setOpen(false);
-  }
+  }, [open]);
 
   return (
     <>
@@ -170,7 +200,7 @@ export function VideoSection({ videoId, t }: Props) {
                   id={checkboxId}
                   type="checkbox"
                   checked={dontShow}
-                  onChange={(e) => setDontShow(e.target.checked)}
+                  onChange={(e) => handleCheckboxChange(e.target.checked)}
                   className="size-4 rounded border-gray-300 accent-teal-dark"
                 />
                 {t.dontShowAgain}
