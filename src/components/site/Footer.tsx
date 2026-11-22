@@ -15,7 +15,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         <path d="M0 0h1440v14c-240 24-480 26-720 8S240 2 0 22Z" fill="currentColor" />
       </svg>
 
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 pb-36 pt-2 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 pb-48 pt-2 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr]">
         {/* Marka */}
         <div>
           <div className="flex items-center gap-3">
