@@ -62,6 +62,7 @@ export function Book3D({
     "--book-t": `${thickness}px`,
   } as CSSProperties;
   const sizes = `${width}px`;
+  const isStaticCover = !!book.coverUrl?.startsWith("/covers/");
 
   return (
     <div
@@ -78,7 +79,8 @@ export function Book3D({
               alt=""
               fill
               sizes={sizes}
-              preload={priority}
+              unoptimized={isStaticCover}
+              priority={priority}
               loading={priority ? "eager" : "lazy"}
               onLoad={(e) => syncRatio(e.currentTarget)}
               className="object-cover"
@@ -95,7 +97,17 @@ export function Book3D({
           )}
         </div>
         <div className="book-face book-spine">
-          {book.coverUrl && <Image src={book.coverUrl} alt="" fill sizes={sizes} className="object-cover" />}
+          {book.coverUrl && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={book.coverUrl}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              className="size-full object-cover"
+            />
+          )}
         </div>
         <div className="book-face book-pages" />
         <div className="book-face book-top" />

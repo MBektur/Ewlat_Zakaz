@@ -47,15 +47,20 @@ export function VideoSection({ videoId, t }: Props) {
 
   // İlk yüklemede localStorage'dan oku
   useEffect(() => {
+    let timer: NodeJS.Timeout | undefined;
     try {
       const isSaved = localStorage.getItem(STORAGE_KEY) === "1";
-      setDontShow(isSaved);
-      // Eğer daha önce kaydedilmemişse ilk ziyarette otomatik aç
       if (!isSaved) {
-        const timer = setTimeout(() => setOpen(true), 700);
-        return () => clearTimeout(timer);
+        timer = setTimeout(() => {
+          setOpen(true);
+        }, 700);
+      } else {
+        setTimeout(() => setDontShow(true), 0);
       }
     } catch {}
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
   }, []);
 
   // Thumbnail'e tıklayıp manuel açtığında da localStorage'dan güncel durumu oku

@@ -186,7 +186,14 @@ export function BookModal({ book, siblings, setLabel, locale, t, onSelect, onClo
                     }`}
                   >
                     {b.coverUrl ? (
-                      <Image src={b.coverUrl} alt="" fill sizes="64px" className="object-contain" />
+                      <Image
+                        src={b.coverUrl}
+                        alt=""
+                        fill
+                        sizes="64px"
+                        unoptimized={!!b.coverUrl.startsWith("/covers/")}
+                        className="object-contain"
+                      />
                     ) : (
                       <span className="text-xs font-bold text-muted">{b.position}</span>
                     )}

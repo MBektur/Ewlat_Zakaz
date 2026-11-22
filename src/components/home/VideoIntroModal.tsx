@@ -49,10 +49,17 @@ export function VideoIntroModal({ videoId, t }: Props) {
   // ESC tuşuyla kapat
   useEffect(() => {
     if (!open) return;
-    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") close(); };
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        if (dontShow) {
+          try { localStorage.setItem(STORAGE_KEY, "1"); } catch {}
+        }
+        setOpen(false);
+      }
+    };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [open]);
+  }, [open, dontShow]);
 
   function close() {
     if (dontShow) {

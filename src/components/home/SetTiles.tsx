@@ -56,7 +56,14 @@ export function SetTiles({ locale, dict, catalog }: { locale: Locale; dict: Dict
                         zIndex: n,
                       }}
                     >
-                      <Image src={b!.coverUrl!} alt="" fill sizes="120px" className="object-cover" />
+                      <Image
+                        src={b!.coverUrl!}
+                        alt=""
+                        fill
+                        sizes="120px"
+                        unoptimized={!!b!.coverUrl?.startsWith("/covers/")}
+                        className="object-cover"
+                      />
                     </div>
                   ))
                 ) : (

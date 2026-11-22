@@ -62,7 +62,14 @@ async function Books() {
                     style={{ aspectRatio: `${book.coverWidth} / ${book.coverHeight}` }}
                   >
                     {book.coverUrl ? (
-                      <Image src={book.coverUrl} alt="" fill sizes="44px" className="object-cover" />
+                      <Image
+                        src={book.coverUrl}
+                        alt=""
+                        fill
+                        sizes="44px"
+                        unoptimized={!!book.coverUrl.startsWith("/covers/")}
+                        className="object-cover"
+                      />
                     ) : (
                       <BookOpen className="absolute inset-0 m-auto size-4 text-muted" />
                     )}

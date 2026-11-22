@@ -132,6 +132,18 @@ export function CatalogBrowser({
   const total = groups.reduce((n, g) => n + g.books.length, 0);
   const filtered = !!activeNorm || !!query.trim();
 
+  // URL'deki set'e göre sekme başlığını güncelle
+  useEffect(() => {
+    if (activeNorm) {
+      const match = sets.find((s) => s.slug.toLowerCase() === activeNorm || String(s.id) === activeNorm);
+      if (match) {
+        document.title = `${setName(match, locale)} · ${t.title}`;
+        return;
+      }
+    }
+    document.title = `${t.title} · ${locale === "ug" ? "ئەۋلاد كىتاب" : "Evlat Kitap"}`;
+  }, [activeNorm, sets, locale, t.title]);
+
   // Pencere: kitabın setindeki TÜM kitaplar gezilir (filtreden bağımsız)
   const openBook = openId != null ? booksById.get(openId) : undefined;
   const openSet = openBook ? catalog.sets.find((x) => x.id === openBook.setId) : undefined;
@@ -204,14 +216,18 @@ export function CatalogBrowser({
         <p className="py-24 text-center text-body">{t.empty}</p>
       ) : (
         <div className="space-y-16 pt-10">
-          {groups.map(({ set, label, books }) => {
+          {groups.map(({ set, label, books }, gIdx) => {
             const limit = limits[set.id] ?? INITIAL_LIMIT;
             const visible = books.slice(0, limit);
             const remaining = books.length - visible.length;
             const allShown = remaining <= 0;
 
             return (
-            <section key={set.id} aria-labelledby={`set-${set.id}`}>
+            <section
+              key={set.id}
+              aria-labelledby={`set-${set.id}`}
+              style={{ contentVisibility: "auto", containIntrinsicSize: "0 460px" }}
+            >
               <div className="mb-6 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-b border-line pb-3">
                 <h2 id={`set-${set.id}`} className="font-display text-2xl tracking-tight text-ink">
                   {label}
@@ -226,7 +242,7 @@ export function CatalogBrowser({
                 </h2>
               </div>
               <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 lg:grid-cols-5">
-                {visible.map((book) => (
+                {visible.map((book, bookIdx) => (
                   <li key={book.id} className="relative flex flex-col items-center rounded-2xl border border-line bg-surface px-2 pb-4 pt-4 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lift">
                     {/* Tüm kartı kaplayan görünmez düğme: tıklayınca ayrıntı penceresi açılır */}
                     <button
@@ -242,6 +258,7 @@ export function CatalogBrowser({
                         maxHeight={180}
                         alt={bookLabel(book, locale).title ?? `${label} · ${fill(t.volume, { n: book.position })}`}
                         placeholderLabel={t.placeholderBadge}
+                        priority={gIdx === 0 && bookIdx < 4}
                       />
                     </div>
                     <div className="mt-3 w-full border-t border-line/70 pt-3">
