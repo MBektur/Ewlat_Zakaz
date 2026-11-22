@@ -98,8 +98,8 @@ export function BookModal({ book, siblings, setLabel, locale, t, onSelect, onClo
           <X className="size-5" strokeWidth={2.4} />
         </button>
 
-        <div className="flex items-end justify-center bg-gradient-to-b from-soft to-[#ffe9d6] px-6 pb-8 pt-12">
-          <Book3D key={book.id} book={book} maxWidth={280} maxHeight={400} alt={title} placeholderLabel={t.placeholderBadge} priority binding={rtl ? "right" : "right"} />
+        <div className="flex items-end justify-center bg-gradient-to-b from-soft to-[#ffe9d6] px-6 pb-6 pt-12">
+          <Book3D key={book.id} book={book} maxWidth={260} maxHeight={340} alt={title} placeholderLabel={t.placeholderBadge} priority binding={rtl ? "right" : "right"} />
         </div>
 
         <div className="flex flex-col p-6 pt-14 sm:p-8 sm:pt-14">
@@ -159,12 +159,12 @@ export function BookModal({ book, siblings, setLabel, locale, t, onSelect, onClo
 
         {/* Setin tüm kitapları: pencerenin tam genişliğinde, 40–50 kitap kaydırmadan (masaüstünde) sığar */}
         {total > 1 && (
-          <div className="px-4 pb-5 sm:px-6 md:col-span-2">
+          <div className="border-t border-line/60 bg-soft px-4 py-4 sm:px-6 md:col-span-2">
             <div
               ref={gridRef}
               role="group"
               aria-label={setLabel ?? undefined}
-              className="grid max-h-[210px] grid-cols-[repeat(auto-fill,minmax(42px,52px))] justify-center gap-1.5 overflow-y-auto rounded-2xl bg-soft p-2.5 md:max-h-[320px]"
+              className="grid max-h-[210px] grid-cols-[repeat(auto-fill,minmax(38px,44px))] justify-center gap-1.5 overflow-y-auto p-1 md:max-h-[320px]"
             >
               {siblings.map((b, i) => {
                 const active = b.id === book.id;
