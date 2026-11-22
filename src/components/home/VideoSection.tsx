@@ -172,9 +172,9 @@ export function VideoSection({ videoId, t }: Props) {
                 type="button"
                 onClick={handleClose}
                 aria-label={t.modalClose}
-                className="flex size-8 shrink-0 items-center justify-center rounded-full bg-white/15 text-white transition hover:bg-white/30"
+                className="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/20 text-white transition-all hover:bg-white/30 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
-                <X className="size-4" strokeWidth={2.5} />
+                <X className="size-5" strokeWidth={2.5} />
               </button>
             </div>
 
@@ -191,24 +191,24 @@ export function VideoSection({ videoId, t }: Props) {
             </div>
 
             {/* FOOTER */}
-            <div className="flex flex-col gap-3 border-t border-gray-100 bg-gray-50 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-3 border-t border-line bg-[#fffbf7] px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
               <label
                 htmlFor={checkboxId}
-                className="flex cursor-pointer select-none items-center gap-2.5 text-sm text-gray-600"
+                className="flex cursor-pointer select-none items-center gap-2.5 text-sm font-semibold text-body transition hover:text-ink"
               >
                 <input
                   id={checkboxId}
                   type="checkbox"
                   checked={dontShow}
                   onChange={(e) => handleCheckboxChange(e.target.checked)}
-                  className="size-4 rounded border-gray-300 accent-teal-dark"
+                  className="size-4 rounded border-line-strong accent-teal-dark"
                 />
                 {t.dontShowAgain}
               </label>
               <button
                 type="button"
                 onClick={handleClose}
-                className="btn-teal inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-extrabold transition sm:shrink-0"
+                className="inline-flex items-center justify-center rounded-full bg-teal-dark px-6 py-2.5 text-sm font-extrabold text-white shadow-soft transition-all hover:bg-[#12645c] hover:shadow-lift active:scale-95 sm:shrink-0"
               >
                 {t.modalSkip}
               </button>
