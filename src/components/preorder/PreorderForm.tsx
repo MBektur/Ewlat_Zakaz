@@ -246,12 +246,12 @@ function Wizard({
         <div className="grid gap-3.5 sm:grid-cols-2">
           <Field id="phone" label={t.phone} error={err("phone")}>
             <IconInput icon={<Phone />}>
-              <input id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" dir="ltr" maxLength={30} placeholder="0555 123 45 67 / +49 ..." defaultValue={defaults.phone} aria-invalid={!!errors.phone} className={`${inputClass} rtl:text-right`} />
+              <input id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" dir="ltr" maxLength={30} placeholder="0555 123 45 67 / +49 ..." defaultValue={defaults.phone} aria-invalid={!!errors.phone} className={`${ltrInputClass}`} />
             </IconInput>
           </Field>
           <Field id="email" label={`${w.email} (${w.optional})`} error={err("email")}>
             <IconInput icon={<Mail />}>
-              <input id="email" name="email" type="email" inputMode="email" autoComplete="email" dir="ltr" maxLength={160} placeholder={`${w.email} (${w.optional})`} defaultValue={defaults.email} aria-invalid={!!errors.email} className={`${inputClass} rtl:text-right`} />
+              <input id="email" name="email" type="email" inputMode="email" autoComplete="email" dir="ltr" maxLength={160} placeholder={`${w.email} (${w.optional})`} defaultValue={defaults.email} aria-invalid={!!errors.email} className={`${ltrInputClass}`} />
             </IconInput>
           </Field>
         </div>
@@ -282,7 +282,7 @@ function Wizard({
               </Field>
               <Field id="recipientPhone" label={w.recipientPhone} error={err("recipientPhone")}>
                 <IconInput icon={<Phone />}>
-                  <input id="recipientPhone" name="recipientPhone" type="tel" dir="ltr" maxLength={30} placeholder={w.recipientPhone} defaultValue={defaults.recipientPhone} aria-invalid={!!errors.recipientPhone} className={`${inputClass} rtl:text-right`} />
+                  <input id="recipientPhone" name="recipientPhone" type="tel" dir="ltr" maxLength={30} placeholder={w.recipientPhone} defaultValue={defaults.recipientPhone} aria-invalid={!!errors.recipientPhone} className={`${ltrInputClass}`} />
                 </IconInput>
               </Field>
             </div>
@@ -540,6 +540,9 @@ function SummaryRow({ label, editLabel, onEdit, children }: { label: string; edi
 const inputClass =
   "w-full rounded-2xl border border-line-strong bg-white py-3 pe-4 ps-11 text-ink placeholder:text-muted/80 shadow-[0_1px_2px_rgb(28_43_90/0.06)] outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/10 aria-[invalid=true]:border-danger/60";
 const plainInputClass = inputClass.replace("ps-11", "ps-4");
+// dir="ltr" input'larda (telefon, e-posta) ps/pe input'un kendi yönüne göre çözülür, ikon ise sayfa yönüne göre durur.
+// RTL sayfada ikon sağda kalır, bu yüzden boşluğu sağa verip metni sağa yaslarız.
+const ltrInputClass = `${inputClass} rtl:ps-4 rtl:pe-11 rtl:text-right`;
 const selectClass =
   "w-full rounded-2xl border border-line-strong bg-white px-4 py-3 text-ink shadow-[0_1px_2px_rgb(28_43_90/0.06)] outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/10 aria-[invalid=true]:border-danger/60";
 
