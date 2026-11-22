@@ -24,7 +24,7 @@ export function Banner({ locale, dict, pricing }: { locale: Locale; dict: Dictio
         <div className="flex items-center gap-5">
           {/* Üst üste kitap yığını */}
           <svg viewBox="0 0 120 110" className="hidden h-24 w-auto shrink-0 sm:block" aria-hidden="true">
-            <rect x="14" y="74" width="92" height="26" rx="5" fill="#17796f" />
+            <rect x="14" y="74" width="92" height="26" rx="5" fill="#0eb7a6" />
             <rect x="14" y="74" width="92" height="7" rx="3" fill="#2a9d8f" />
             <rect x="22" y="48" width="88" height="26" rx="5" fill="#ffc94d" transform="rotate(-5 66 61)" />
             <rect x="22" y="48" width="88" height="7" rx="3" fill="#ffe08a" transform="rotate(-5 66 61)" />
