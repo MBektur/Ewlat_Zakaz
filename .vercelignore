@@ -1,5 +1,6 @@
 # Yüklemeye gerek olmayan büyük kaynak dosyalar ve yerel ayarlar
-ref_imgs
-data
-.env.local
-drizzle
+# Başındaki "/" önemli: yoksa src/data gibi iç klasörler de eşleşir.
+/ref_imgs
+/data
+/.env.local
+/drizzle
