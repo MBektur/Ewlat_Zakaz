@@ -13,8 +13,7 @@ import { SectionTitle } from "@/components/home/SectionTitle";
 import { SetTiles } from "@/components/home/SetTiles";
 import { Steps } from "@/components/home/Steps";
 import { PreorderSection } from "@/components/preorder/PreorderSection";
-import { YoutubeEmbed } from "@/components/home/YoutubeEmbed";
-import { VideoIntroModal } from "@/components/home/VideoIntroModal";
+import { VideoSection } from "@/components/home/VideoSection";
 
 export default async function HomePage() {
   const locale = await getLocale();
@@ -34,13 +33,6 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* İlk ziyarette otomatik tanıtım video modalı */}
-      <VideoIntroModal
-        videoId="pnGYSoKbVoI"
-        title={dict.video.title}
-        closeLabel={dict.video.modalClose}
-        skipLabel={dict.video.modalSkip}
-      />
       <Hero locale={locale} dict={dict} pricing={pricing} setNames={setNames} books={carouselBooks.filter((b) => b.coverUrl).slice(0, 3)} />
 
       <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6" aria-labelledby="featured-title">
@@ -84,11 +76,7 @@ export default async function HomePage() {
       <section className="mx-auto mt-20 max-w-6xl px-4 sm:px-6" aria-labelledby="video-title">
         <SectionTitle id="video-title">{dict.video.sectionTitle}</SectionTitle>
         <div className="mt-10">
-          <YoutubeEmbed
-            videoId="pnGYSoKbVoI"
-            title={dict.video.title}
-            caption={dict.video.caption}
-          />
+          <VideoSection videoId="pnGYSoKbVoI" t={dict.video} />
         </div>
       </section>
 

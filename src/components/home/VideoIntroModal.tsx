@@ -1,40 +1,63 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { X, Film } from "lucide-react";
 
 const STORAGE_KEY = "ewlat_intro_seen";
 
+export interface VideoIntroModalT {
+  modalTitle: string;
+  modalSubtitle: string;
+  modalClose: string;
+  dontShowAgain: string;
+  watchNow: string;
+  modalSkip: string;
+  title: string;
+}
+
 interface Props {
   videoId: string;
-  title: string;
-  closeLabel: string;
-  skipLabel: string;
+  t: VideoIntroModalT;
 }
 
 /**
- * Siteye ilk girişte otomatik açılan tanıtım video modalı.
- * localStorage'da "ewlat_intro_seen" yoksa gösterilir; kapanınca kaydeder.
+ * Siteye ilk girişte açılan tanıtım video modalı.
+ * - Header: başlık + X butonu
+ * - Body: YouTube iframe
+ * - Footer: "bir daha gösterme" checkbox + "şimdi değil" butonu
+ *
+ * Checkbox işaretliyken kapatılırsa localStorage'a kaydeder → bir daha açılmaz.
+ * Checkbox işaretli değilse her ziyarette tekrar açılır.
  */
-export function VideoIntroModal({ videoId, title, closeLabel, skipLabel }: Props) {
+export function VideoIntroModal({ videoId, t }: Props) {
   const [open, setOpen] = useState(false);
+  const [dontShow, setDontShow] = useState(false);
+  const checkboxId = "intro-dont-show";
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     try {
       if (!localStorage.getItem(STORAGE_KEY)) {
-        // Küçük gecikme: sayfa render olduktan sonra aç (layout shift önleme)
-        const t = setTimeout(() => setOpen(true), 800);
-        return () => clearTimeout(t);
+        const timer = setTimeout(() => setOpen(true), 700);
+        return () => clearTimeout(timer);
       }
     } catch {
-      // localStorage erişilemiyorsa sessizce geç
+      // localStorage yoksa sessizce geç
     }
   }, []);
 
+  // ESC tuşuyla kapat
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") close(); };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [open]);
+
   function close() {
-    try {
-      localStorage.setItem(STORAGE_KEY, "1");
-    } catch {}
+    if (dontShow) {
+      try { localStorage.setItem(STORAGE_KEY, "1"); } catch {}
+    }
     setOpen(false);
   }
 
@@ -43,35 +66,50 @@ export function VideoIntroModal({ videoId, title, closeLabel, skipLabel }: Props
   return (
     /* Backdrop */
     <div
-      className="fixed inset-0 z-[200] flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-[200] flex items-center justify-center bg-black/65 p-4 backdrop-blur-sm"
       onClick={close}
-      role="dialog"
-      aria-modal="true"
-      aria-label={title}
+      role="presentation"
     >
-      {/* Modal kutusu — tıklamayı durdur */}
+      {/* Modal kutu */}
       <div
-        className="relative w-full max-w-3xl"
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="video-modal-title"
         onClick={(e) => e.stopPropagation()}
+        className="flex w-full max-w-2xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl"
       >
-        {/* Kapat butonu */}
-        <button
-          type="button"
-          onClick={close}
-          aria-label={closeLabel}
-          className="absolute -right-3 -top-3 z-10 flex size-9 items-center justify-center rounded-full bg-white text-ink shadow-lg transition hover:bg-gray-100 rtl:left-[-0.75rem] rtl:right-auto"
-        >
-          <X className="size-5" strokeWidth={2.5} />
-        </button>
+        {/* ── HEADER ── */}
+        <div className="flex items-center justify-between gap-4 border-b border-teal-dark/20 bg-teal-dark px-5 py-4">
+          <div className="flex items-center gap-3">
+            <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/20">
+              <Film className="size-5 text-white" strokeWidth={2} />
+            </span>
+            <div>
+              <h2
+                id="video-modal-title"
+                className="text-base font-extrabold leading-tight text-white"
+              >
+                {t.modalTitle}
+              </h2>
+              <p className="mt-0.5 text-xs text-white/75">{t.modalSubtitle}</p>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={close}
+            aria-label={t.modalClose}
+            className="flex size-8 shrink-0 items-center justify-center rounded-full bg-white/15 text-white transition hover:bg-white/30"
+          >
+            <X className="size-4" strokeWidth={2.5} />
+          </button>
+        </div>
 
-        {/* Video iframe */}
-        <div
-          className="overflow-hidden rounded-2xl shadow-2xl"
-          style={{ aspectRatio: "16/9" }}
-        >
+        {/* ── VIDEO BODY ── */}
+        <div className="bg-black" style={{ aspectRatio: "16/9" }}>
           <iframe
             src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
-            title={title}
+            title={t.title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="h-full w-full border-0"
@@ -79,14 +117,30 @@ export function VideoIntroModal({ videoId, title, closeLabel, skipLabel }: Props
           />
         </div>
 
-        {/* Alt çubuk */}
-        <div className="mt-3 flex justify-center">
+        {/* ── FOOTER ── */}
+        <div className="flex flex-col gap-3 border-t border-gray-100 bg-gray-50 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+          {/* Checkbox */}
+          <label
+            htmlFor={checkboxId}
+            className="flex cursor-pointer select-none items-center gap-2.5 text-sm text-gray-600"
+          >
+            <input
+              id={checkboxId}
+              type="checkbox"
+              checked={dontShow}
+              onChange={(e) => setDontShow(e.target.checked)}
+              className="size-4 rounded border-gray-300 accent-[#1B4A7D]"
+            />
+            {t.dontShowAgain}
+          </label>
+
+          {/* Kapat butonu */}
           <button
             type="button"
             onClick={close}
-            className="rounded-full bg-white/15 px-5 py-2 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/25"
+            className="rounded-full border border-gray-300 bg-white px-5 py-2 text-sm font-bold text-gray-600 transition hover:border-gray-400 hover:text-gray-900 sm:shrink-0"
           >
-            {skipLabel}
+            {t.modalSkip}
           </button>
         </div>
       </div>
