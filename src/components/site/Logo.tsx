@@ -3,8 +3,8 @@ import Image from "next/image";
 /** Hilal üzerinde kitap okuyan çocuk. Hilal beyaz olduğu için koyu teal rozet içinde durur. */
 export function LogoMark({ className = "size-11" }: { className?: string }) {
   return (
-    <span className={`inline-flex shrink-0 items-center justify-center rounded-2xl bg-teal-dark p-[12%] ${className}`} aria-hidden="true">
-      <Image src="/logo-mark.png" alt="" width={534} height={640} unoptimized loading="eager" className="h-full w-auto" />
+    <span className={`inline-flex shrink-0 items-center justify-center rounded-2xl bg-teal-dark ${className}`} aria-hidden="true">
+      <Image src="/logo-mark.png" alt="" width={534} height={640} unoptimized loading="eager" className="h-[76%] w-auto" />
     </span>
   );
 }
