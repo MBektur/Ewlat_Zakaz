@@ -33,44 +33,58 @@ export async function PreorderSection({ locale, dict, headingLevel = "h2" }: Pro
         </p>
       </div>
 
-      <aside className="relative flex flex-col overflow-hidden rounded-[2rem] bg-teal-dark text-white">
-        <div className="flex flex-1 flex-col p-7 sm:p-9">
-          <p className="text-sm font-extrabold uppercase tracking-wider text-sun">{t.priceLabel}</p>
-          <PriceTag pricing={pricing} locale={locale} untilTemplate={t.campaignUntil} className="font-display mt-1 block text-5xl text-sun sm:text-6xl" />
-          <p className="mt-4 text-xl font-extrabold">{t.packageTitle}</p>
-          <p className="mt-1 leading-relaxed text-white/80">{t.packageText}</p>
+      <aside className="relative flex flex-col overflow-hidden rounded-[2rem] border border-line bg-surface p-6 shadow-soft sm:p-8">
+        {/* Fiyat & Paket Vurgu Alanı */}
+        <div className="rounded-2xl border border-line bg-gradient-to-b from-[#fff6ed] to-[#fedec1]/35 p-6">
+          <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-black uppercase tracking-wider text-primary">
+            {t.priceLabel}
+          </span>
+          <PriceTag
+            pricing={pricing}
+            locale={locale}
+            untilTemplate={t.campaignUntil}
+            className="font-display mt-2 block text-4xl font-extrabold text-ink sm:text-5xl"
+          />
+          <p className="mt-3 text-lg font-extrabold text-ink">{t.packageTitle}</p>
+          <p className="mt-1 text-sm leading-relaxed text-body">{t.packageText}</p>
+        </div>
 
-          <ParcelArt className="mx-auto my-6 block h-auto w-full max-w-[260px]" />
+        {/* Kargo Görseli */}
+        <div className="my-6 flex items-center justify-center rounded-2xl border border-line/60 bg-soft/30 p-4">
+          <ParcelArt className="h-auto w-full max-w-[230px]" />
+        </div>
 
-          <p className="font-display text-2xl leading-snug">{t.artText}</p>
-          <ul className="mt-5 space-y-2.5 text-white/90">
-            {dict.features.map((f) => (
-              <li key={f.title} className="flex items-start gap-3">
-                <Check className="mt-0.5 size-5 shrink-0 text-sun" strokeWidth={3} />
-                <span>
-                  <span className="font-bold">{f.title}</span>
-                  <span className="text-white/70"> · {f.text}</span>
-                </span>
-              </li>
-            ))}
-          </ul>
+        {/* Özellikler Başlığı */}
+        <p className="font-display text-2xl font-extrabold leading-snug text-ink">{t.artText}</p>
 
-          {/* WhatsApp iletişim: kutunun altında, form kolonuyla aynı hizada kalır. */}
-          <div className="mt-auto border-t border-white/20 pt-7">
-            <p className="text-lg font-extrabold">{t.whatsappTitle}</p>
-            <p className="mt-1 leading-relaxed text-white/80">{t.whatsappText}</p>
-            <a
-              href={whatsappUrl(locale)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-flex max-w-full items-center gap-3 rounded-full bg-white py-2.5 pe-6 ps-2.5 font-extrabold text-ink shadow-lift transition hover:bg-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun"
-            >
-              <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
-                <MessageCircle className="size-6" aria-hidden="true" fill="currentColor" strokeWidth={0} />
+        {/* Özellik Listesi */}
+        <ul className="mt-4 space-y-3">
+          {dict.features.map((f) => (
+            <li key={f.title} className="flex items-start gap-3">
+              <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-teal-dark/10 text-teal-dark">
+                <Check className="size-3.5" strokeWidth={3} />
               </span>
-              <span>{dict.site.whatsapp}</span>
-            </a>
-          </div>
+              <span className="text-sm leading-snug">
+                <span className="font-bold text-ink">{f.title}</span>
+                <span className="text-muted"> · {f.text}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        {/* WhatsApp İletişim */}
+        <div className="mt-auto border-t border-line pt-6">
+          <p className="text-base font-extrabold text-ink">{t.whatsappTitle}</p>
+          <p className="mt-1 text-xs leading-relaxed text-muted">{t.whatsappText}</p>
+          <a
+            href={whatsappUrl(locale)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-5 py-3 font-extrabold text-white shadow-soft transition hover:bg-[#20ba5a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]"
+          >
+            <MessageCircle className="size-5 fill-current" aria-hidden="true" />
+            <span>{dict.site.whatsapp}</span>
+          </a>
         </div>
       </aside>
     </div>

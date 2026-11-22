@@ -208,7 +208,7 @@ export function VideoSection({ videoId, t }: Props) {
               <button
                 type="button"
                 onClick={handleClose}
-                className="rounded-full border border-gray-300 bg-white px-5 py-2 text-sm font-bold text-gray-600 transition hover:border-gray-400 hover:text-gray-900 sm:shrink-0"
+                className="btn-teal inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-extrabold transition sm:shrink-0"
               >
                 {t.modalSkip}
               </button>
