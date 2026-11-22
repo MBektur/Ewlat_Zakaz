@@ -24,7 +24,7 @@
   /* hardal */
   --color-sun: #ffc94d;
   --color-teal: #2a9d8f;
-  --color-teal-dark: #0eb7a6;
+  --color-teal-dark: #17796f;
   --color-green: #4fa34a;
   --color-orange: #ee7d34;
   --color-purple: #8a6fe0;
@@ -116,7 +116,7 @@ html[lang="ug"] .font-display {
 
 /* Teal ikincil buton */
 .btn-teal {
-  background: linear-gradient(180deg, #34b0a1, #0eb7a6);
+  background: linear-gradient(180deg, #34b0a1, #17796f);
   color: #fff;
   box-shadow: 0 2px 0 rgb(10 80 72 / 0.3), 0 14px 26px -12px rgb(23 121 111 / 0.55);
 }
