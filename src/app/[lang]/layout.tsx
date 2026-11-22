@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, Lateef } from "next/font/google";
+import { Nunito, Lateef } from "next/font/google";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { localeDir, locales } from "@/i18n/config";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import "../globals.css";
 
-const fraunces = Fraunces({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-fraunces",
-  axes: ["opsz", "SOFT"],
-});
-const inter = Inter({ subsets: ["latin", "latin-ext"], variable: "--font-inter" });
+const nunito = Nunito({ subsets: ["latin", "latin-ext"], variable: "--font-nunito" });
 const lateef = Lateef({
   subsets: ["arabic", "latin"],
   weight: ["400", "500", "700"],
@@ -39,7 +34,7 @@ export default async function SiteLayout({ children }: LayoutProps<"/[lang]">) {
     <html
       lang={locale}
       dir={localeDir[locale]}
-      className={`${fraunces.variable} ${inter.variable} ${lateef.variable}`}
+      className={`${nunito.variable} ${lateef.variable}`}
     >
       <body className="flex min-h-dvh flex-col">
         <Header locale={locale} brand={dict.site.brand} nav={dict.nav} />

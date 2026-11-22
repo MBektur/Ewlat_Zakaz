@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Uygurca Çocuk Kitapları: Katalog ve Ön Sipariş
 
-## Getting Started
+Next.js 16 (App Router, Cache Components) + PostgreSQL (Drizzle) + Tailwind 4 + Swiper.
+Türkçe (`/tr`) ve Arap harfli Uygurca (`/ug`, RTL). Ön sipariş **tüm koleksiyon için tek paket** (kitap/set seçimi yok).
 
-First, run the development server:
-
+## Kurulum
 ```bash
+npm install
+cp .env.example .env.local      # DATABASE_URL, ADMIN_PASSWORD, SESSION_SECRET (openssl rand -hex 32)
+createdb ewlat_kitap            # ya da docker compose up -d
+npm run db:migrate
+npm run db:seed                 # 10 gerçek kapak + geçici örnek kitaplar
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Yönetim paneli: `/admin` (şifre: `ADMIN_PASSWORD`). Siparişler, kitaplar, setler, fiyat ve kampanya tarihi buradan yönetilir.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 154 kitabı içe aktarma
+1. `data/kitaplar-sablon.csv` şablonunu doldurun (ad, set, sıra, kapak dosyası, kalınlık).
+2. `npm run import:books -- kitaplar.csv --covers <kapak-klasörü> --dry-run` (deneme)
+3. `--dry-run` olmadan çalıştırın. Kitap sayısı, set dağılımı ve eksik bilgiler raporlanır.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Kapaklar sRGB'ye çevrilir; 3D kitabın oranı görselin gerçek piksel ölçüsünden gelir.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## İllüstrasyonlar
+Hero sahnesi, sipariş kartı manzarası (kutu + cami), footer silueti ve yapraklar özgün SVG'dir:
+`src/components/art/` (HeroScene, OrderScene, FooterScene, Leaves). Renkler ve şekiller doğrudan düzenlenebilir.
+Hero'daki kitaplar katalogdaki "carousel'de göster" işaretli ilk üç kapaktır.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Komutlar
+`npm run lint` · `npm run typecheck` · `npm run build` · `npm run db:studio`

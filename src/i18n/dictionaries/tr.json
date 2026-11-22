@@ -13,28 +13,43 @@
   },
   "hero": {
     "eyebrow": "Uygurca çocuk kitapları · Ön sipariş",
-    "title": "Çocuklarımız için ana dilde kitaplar",
-    "subtitle": "154'ten fazla Arap harfli Uygurca çocuk kitabı, setler hâlinde baskıya hazırlanıyor. Ön siparişinizi şimdiden bırakın; basım tamamlanınca kargoyla gönderelim.",
-    "ctaPreorder": "Ön sipariş ver",
-    "ctaBrowse": "Kitapları incele"
+    "title": "Uygur Çocukları İçin En Güzel Kitaplar!",
+    "highlight": "154+",
+    "subtitle": "Arap harfli Uygurca çocuk kitabı, tek koleksiyonda!",
+    "subtitle2": "Kitaplar basıma hazırlanıyor. Ön siparişinizi şimdi bırakın, basım tamamlanınca kapınıza gelsin.",
+    "ctaPreorder": "Ön Sipariş Ver",
+    "ctaBrowse": "Kitapları incele",
+    "priceBadge": "Tüm koleksiyon {price}"
   },
   "carousel": {
     "title": "Kitaplarımız",
-    "subtitle": "Setlerimizden seçtiğimiz kitaplar",
-    "viewAll": "Tüm kitapları gör",
+    "subtitle": "Koleksiyondan seçtiğimiz kitaplar",
+    "viewAll": "Bütün Kitaplar",
     "prev": "Önceki",
     "next": "Sonraki",
     "slide": "{n}. sayfa"
   },
   "features": [
-    { "title": "154+ kitap", "text": "Farklı setlerde, tek koleksiyonda" },
-    { "title": "Ana dilde", "text": "Arap harfli Uygurca metinler" },
-    { "title": "Şimdilik ödeme yok", "text": "Yalnızca ön sipariş talebi" },
-    { "title": "Kargo ile teslim", "text": "Basım tamamlandıktan sonra" }
+    {
+      "title": "154+ Kitap",
+      "text": "Geniş kitap koleksiyonu"
+    },
+    {
+      "title": "Ana Dilde",
+      "text": "Arap harfli Uygurca"
+    },
+    {
+      "title": "Güvenli Ön Sipariş",
+      "text": "Şimdilik ödeme alınmaz"
+    },
+    {
+      "title": "Kargo ile Teslim",
+      "text": "Basımdan sonra kapınıza"
+    }
   ],
   "catalog": {
     "title": "Tüm Kitaplar",
-    "subtitle": "Koleksiyondaki bütün kitaplar, setlerine göre.",
+    "subtitle": "Koleksiyondaki bütün kitaplar, setlerine göre. Ön sipariş koleksiyonun tamamı için alınır.",
     "search": "Kitap, konu veya set ara…",
     "searchLabel": "Ara",
     "allSets": "Tüm setler",
@@ -46,11 +61,11 @@
     "placeholderSet": "Geçici set",
     "untitled": "Kitap adı henüz eklenmedi",
     "volume": "{n}. kitap",
-    "preorderSet": "Bu seti ön sipariş et"
+    "preorderAll": "Tüm koleksiyonu ön sipariş et"
   },
   "preorder": {
     "title": "Ön Sipariş Formu",
-    "intro": "İlgilendiğiniz setleri seçin, iletişim bilgilerinizi bırakın. Şimdilik ödeme alınmıyor; basım tarihi netleşince sizi arayacağız.",
+    "intro": "İletişim bilgilerinizi bırakın; koleksiyonun tamamı basıldığında adresinize gönderelim. Şimdilik ödeme alınmıyor.",
     "notice": "Kitaplarımız ön sipariş aşamasındadır. Basım süreci tamamlandıktan sonra siparişleriniz adresinize kargo ile gönderilecektir.",
     "noPayment": "Bu form ödeme almaz. Bilgileriniz yalnızca ön siparişinizle ilgili iletişim için kullanılır.",
     "fullName": "Ad ve soyad",
@@ -58,40 +73,63 @@
     "phoneHint": "Size ulaşabileceğimiz numara",
     "address": "Teslimat adresi",
     "addressHint": "Mahalle, sokak, bina/daire no, ilçe, il",
-    "sets": "İlgilendiğiniz set(ler)",
-    "setsHint": "Birden fazla seçebilirsiniz.",
     "note": "Ek not (isteğe bağlı)",
     "consent": "Kişisel verilerimin ön sipariş talebimle ilgili iletişim amacıyla işlenmesini kabul ediyorum.",
     "consentLink": "Aydınlatma metni",
-    "submit": "Ön siparişi gönder",
+    "submit": "Siparişi Gönder",
     "submitting": "Gönderiliyor…",
     "successTitle": "Talebiniz alındı",
-    "successText": "Teşekkürler {name}. Basım süreci netleştiğinde {phone} numarasından sizinle iletişime geçeceğiz.",
+    "successText": "Teşekkürler {name}. {quantity} takım için toplam {total} tutarındaki ön siparişiniz kaydedildi. Basım süreci netleştiğinde {phone} numarasından sizi arayacağız.",
     "another": "Yeni talep oluştur",
     "errors": {
       "fullName": "Lütfen ad ve soyadınızı yazın.",
       "phone": "Geçerli bir telefon numarası yazın.",
       "address": "Lütfen açık adresinizi yazın.",
-      "sets": "En az bir set seçin.",
       "note": "Not en fazla 1000 karakter olabilir.",
       "consent": "Devam etmek için onay vermeniz gerekiyor.",
       "rateLimit": "Kısa sürede çok fazla talep gönderildi. Lütfen biraz sonra tekrar deneyin.",
-      "generic": "Bir sorun oluştu, talebiniz kaydedilemedi. Lütfen tekrar deneyin."
-    }
+      "generic": "Bir sorun oluştu, talebiniz kaydedilemedi. Lütfen tekrar deneyin.",
+      "quantity": "Adet 1 ile 20 arasında olmalı.",
+      "closed": "Ön sipariş şu anda kapalı."
+    },
+    "packageTitle": "Tüm koleksiyon",
+    "packageText": "154+ kitabın tamamı tek pakette. Kitaplar tek tek ya da set set satılmaz.",
+    "priceLabel": "Ön sipariş fiyatı",
+    "campaignUntil": "{date} tarihine kadar",
+    "campaignNote": "Bu fiyat ön sipariş dönemine özeldir.",
+    "quantity": "Adet (takım)",
+    "quantityHint": "Her takım koleksiyonun tamamını içerir.",
+    "total": "Toplam",
+    "artText": "Kitaplarınız Kısa Sürede Kapınızda!"
   },
   "privacy": {
     "title": "Kişisel Verilerin Korunması Aydınlatma Metni",
     "sections": [
-      { "heading": "Hangi verileri işliyoruz?", "text": "Ön sipariş formunda verdiğiniz ad ve soyad, telefon numarası, teslimat adresi, seçtiğiniz setler ve varsa ek notunuz." },
-      { "heading": "Neden işliyoruz?", "text": "Ön sipariş talebinizle ilgili sizinle iletişime geçmek ve basım tamamlandığında kargo gönderimini planlamak için." },
-      { "heading": "Kimlerle paylaşıyoruz?", "text": "Verileriniz satılmaz ve pazarlama amacıyla paylaşılmaz. Yalnızca gönderim aşamasında, teslimat için gerekli bilgiler kargo firmasıyla paylaşılır." },
-      { "heading": "Ne kadar saklıyoruz?", "text": "Ön sipariş süreciniz tamamlanana ve yasal saklama süreleri dolana kadar. Sonrasında silinir ya da anonim hâle getirilir." },
-      { "heading": "Haklarınız", "text": "6698 sayılı KVKK'nın 11. maddesi kapsamında verilerinize erişme, düzeltilmesini veya silinmesini isteme hakkına sahipsiniz. Bunun için bizimle iletişime geçebilirsiniz." }
+      {
+        "heading": "Hangi verileri işliyoruz?",
+        "text": "Ön sipariş formunda verdiğiniz ad ve soyad, telefon numarası, teslimat adresi, seçtiğiniz setler ve varsa ek notunuz."
+      },
+      {
+        "heading": "Neden işliyoruz?",
+        "text": "Ön sipariş talebinizle ilgili sizinle iletişime geçmek ve basım tamamlandığında kargo gönderimini planlamak için."
+      },
+      {
+        "heading": "Kimlerle paylaşıyoruz?",
+        "text": "Verileriniz satılmaz ve pazarlama amacıyla paylaşılmaz. Yalnızca gönderim aşamasında, teslimat için gerekli bilgiler kargo firmasıyla paylaşılır."
+      },
+      {
+        "heading": "Ne kadar saklıyoruz?",
+        "text": "Ön sipariş süreciniz tamamlanana ve yasal saklama süreleri dolana kadar. Sonrasında silinir ya da anonim hâle getirilir."
+      },
+      {
+        "heading": "Haklarınız",
+        "text": "6698 sayılı KVKK'nın 11. maddesi kapsamında verilerinize erişme, düzeltilmesini veya silinmesini isteme hakkına sahipsiniz. Bunun için bizimle iletişime geçebilirsiniz."
+      }
     ],
     "back": "Forma dön"
   },
   "footer": {
-    "tagline": "Uygur çocukları için ana dilde kitaplar.",
+    "tagline": "Geleceğimiz için Kitap Okuyalım",
     "privacy": "Aydınlatma metni",
     "sampleNotice": ""
   },

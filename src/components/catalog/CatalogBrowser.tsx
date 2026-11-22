@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Search, X } from "lucide-react";
@@ -78,7 +77,7 @@ export function CatalogBrowser({
 
   return (
     <div>
-      <div className="sticky top-16 z-30 -mx-4 border-b border-line/70 bg-bg/90 px-4 py-4 backdrop-blur-md sm:top-[72px] sm:-mx-6 sm:px-6">
+      <div className="sticky top-0 z-30 -mx-4 border-b border-line/70 bg-bg/90 px-4 py-4 backdrop-blur-md sm:-mx-6 sm:px-6">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
           <label className="relative block lg:w-80">
             <span className="sr-only">{t.searchLabel}</span>
@@ -151,9 +150,6 @@ export function CatalogBrowser({
                     </span>
                   )}
                 </h2>
-                <Link href={`/${locale}/on-siparis?set=${set.slug}`} className="text-sm font-medium text-primary hover:underline">
-                  {t.preorderSet}
-                </Link>
               </div>
               <ul className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                 {books.map((book) => (

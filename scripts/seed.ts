@@ -49,12 +49,17 @@ async function main() {
     const bookRows = await tx
       .insert(books)
       .values(
-        seedBooks.map(({ setSlug: _s, position: _p, ...b }) => ({
+        seedBooks.map((seed) => {
+          const { setSlug, position, ...b } = seed;
+          void setSlug;
+          void position;
+          return {
           ...b,
           isPlaceholder: b.isPlaceholder ?? false,
           isFeatured: b.isFeatured ?? false,
           featuredOrder: b.featuredOrder ?? 0,
-        })),
+          };
+        }),
       )
       .onConflictDoUpdate({
         target: books.slug,

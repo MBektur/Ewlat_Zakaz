@@ -12,7 +12,7 @@ export default async function PreorderPage() {
   const dict = await getDictionary(locale);
   return (
     <div className="mx-auto max-w-6xl px-4 pt-12 sm:px-6 sm:pt-16">
-      <PreorderSection locale={locale} dict={dict} fromUrl headingLevel="h1" />
+      <PreorderSection locale={locale} dict={dict} headingLevel="h1" />
     </div>
   );
 }

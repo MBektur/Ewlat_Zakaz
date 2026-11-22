@@ -1,13 +1,23 @@
-export function LogoMark({ className = "size-9" }: { className?: string }) {
+/** Açık kitap + yıldız (ref-ui logosu esinli). */
+export function LogoMark({ className = "size-11" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 40 40" className={className} aria-hidden="true">
-      <rect x="1" y="1" width="38" height="38" rx="11" fill="var(--color-primary)" />
-      <path
-        d="M20 13.5c-2.6-1.9-6-2.6-9.5-2.2v15.4c3.5-.4 6.9.3 9.5 2.2 2.6-1.9 6-2.6 9.5-2.2V11.3c-3.5-.4-6.9.3-9.5 2.2Z"
-        fill="var(--color-surface)"
-      />
-      <path d="M20 13.5v15.4" stroke="var(--color-accent)" strokeWidth="1.4" />
-      <circle cx="20" cy="8.6" r="1.6" fill="var(--color-accent)" />
+    <svg viewBox="0 0 48 48" className={className} aria-hidden="true">
+      <path d="M24 14c-5-3.6-11.6-4.6-19-3.4v25.6c7.4-1.2 14 .2 19 3.8 5-3.6 11.6-5 19-3.8V10.6C35.6 9.4 29 10.4 24 14Z" fill="#2c7be5" />
+      <path d="M24 16.4c-4.2-2.8-9.6-3.6-15.6-2.8v20.2c6-.6 11.4.6 15.6 3.4V16.4Z" fill="#fff" />
+      <path d="M24 16.4c4.2-2.8 9.6-3.6 15.6-2.8v20.2c-6-.6-11.4.6-15.6 3.4V16.4Z" fill="#e6f1fc" />
+      <path d="M12 20.5c3.6-.3 6.8.4 9 1.8M12 25c3.6-.3 6.8.4 9 1.8M27 22.3c2.2-1.4 5.4-2.1 9-1.8M27 26.8c2.2-1.4 5.4-2.1 9-1.8" stroke="#bfd3ea" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="m24 2.8 2.2 4.5 5 .7-3.6 3.5.9 4.9-4.5-2.3-4.5 2.3.9-4.9L16.8 8l5-.7L24 2.8Z" fill="#f5b31b" />
     </svg>
+  );
+}
+
+/** Marka adını iki satıra böler: "Ewlat" / "Kitap". */
+export function BrandText({ brand, className = "" }: { brand: string; className?: string }) {
+  const [first, ...rest] = brand.split(" ");
+  return (
+    <span className={`flex flex-col font-display text-[1.15rem] leading-[1.05] text-ink ${className}`}>
+      <span>{first}</span>
+      {rest.length > 0 && <span>{rest.join(" ")}</span>}
+    </span>
   );
 }
