@@ -27,7 +27,6 @@ import { createPreorder } from "@/lib/actions/preorder";
 import { fill } from "@/lib/format";
 import type { CountryOption, GeoState } from "@/lib/geo-types";
 import { formatTry } from "@/lib/pricing";
-import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import {
   STEP_FIELDS,
   defaultValues,
@@ -78,16 +77,13 @@ function PreorderFormInner({ onAgain, ...props }: Props & { onAgain: () => void 
         {state.demo && (
           <p className="mt-4 rounded-xl bg-accent/25 px-4 py-3 text-sm font-bold text-ink">{props.t.demoNotice}</p>
         )}
-        <div className="mt-6 flex flex-wrap items-center gap-3">
-          <WhatsAppLink locale={props.locale} label={props.t.whatsapp} />
-          <button
-            type="button"
-            onClick={onAgain}
-            className="rounded-full border border-line bg-surface px-5 py-2.5 text-sm font-bold text-body hover:border-line-strong hover:text-ink"
-          >
-            {props.t.another}
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={onAgain}
+          className="mt-6 rounded-full border border-line bg-surface px-5 py-2.5 text-sm font-bold text-body hover:border-line-strong hover:text-ink"
+        >
+          {props.t.another}
+        </button>
       </div>
     );
   }

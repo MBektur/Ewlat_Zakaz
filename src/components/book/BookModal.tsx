@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, ShoppingBag, X } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, ChevronLeft, ChevronRight, ShoppingBag, X } from "lucide-react";
 import { Book3D } from "@/components/book/Book3D";
 import type { Locale } from "@/i18n/config";
 import { localePath } from "@/i18n/paths";
@@ -188,6 +188,20 @@ export function BookModal({ book, siblings, setLabel, locale, t, onSelect, onClo
                 );
               })}
             </div>
+          </div>
+        )}
+
+        {/* Alt bilgi: klavye ile gezinme ipucu (dokunmatik ekranlarda gizli) */}
+        {total > 1 && (
+          <div className="sticky bottom-0 hidden items-center justify-center gap-3 border-t border-line bg-surface px-4 py-3 text-sm text-muted md:col-span-2 md:flex">
+            <span dir="ltr" className="flex items-center gap-1" aria-hidden="true">
+              {[ArrowUp, ArrowDown, ArrowLeft, ArrowRight].map((Icon, i) => (
+                <kbd key={i} className="flex size-7 items-center justify-center rounded-md border border-line-strong bg-soft text-ink shadow-[0_1px_0_rgb(0_0_0/0.12)]">
+                  <Icon className="size-4" strokeWidth={2.6} />
+                </kbd>
+              ))}
+            </span>
+            <span className="font-semibold">{t.keyHint}</span>
           </div>
         )}
       </div>

@@ -8,7 +8,7 @@ export const WHATSAPP_DISPLAY = "+90 553 070 73 50";
 
 const messages: Record<Locale, string> = {
   tr: "Merhaba, ön sipariş hakkında bilgi almak istiyorum.",
-  ug: "ياخشىمۇسىز، ئالدىن زاكاز ھەققىدە ئۇچۇر ئالماقچى ئىدىم.",
+  ug: "ئەسسالامۇئەلەيكۇم، 154 كىتابنى زاكاز قىلىش ھەققىدە ئۇچۇر ئالماقچى ئىدىم.",
 };
 
 /** "Click to chat" bağlantısı; mesaj, sohbet açılınca hazır yazılı gelir. */

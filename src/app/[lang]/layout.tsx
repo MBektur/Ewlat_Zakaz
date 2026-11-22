@@ -5,6 +5,7 @@ import { localeDir, locales } from "@/i18n/config";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Topbar } from "@/components/site/Topbar";
+import { WhatsAppFloat } from "@/components/site/WhatsAppLink";
 import "../globals.css";
 
 const fredoka = Fredoka({ subsets: ["latin", "latin-ext"], variable: "--font-fredoka" });
@@ -43,6 +44,7 @@ export default async function SiteLayout({ children }: LayoutProps<"/[lang]">) {
         <Header locale={locale} brand={dict.site.brand} nav={dict.nav} />
         <main className="flex-1">{children}</main>
         <Footer locale={locale} dict={dict} />
+        <WhatsAppFloat locale={locale} label={dict.site.whatsapp} />
       </body>
     </html>
   );

@@ -4,7 +4,6 @@ import { Heart } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { BrandText, LogoMark } from "./Logo";
-import { WhatsAppLink } from "./WhatsAppLink";
 
 export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
@@ -15,9 +14,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 pb-10 pt-4 sm:px-6 md:grid-cols-[1fr_auto]">
         <div>
           <div className="flex items-center gap-3">
-            <span className="rounded-2xl bg-white p-1.5">
-              <LogoMark className="size-11" />
-            </span>
+            <LogoMark className="size-14" />
             <BrandText brand={dict.site.brand} className="text-2xl" light />
           </div>
           <nav className="mt-6 flex flex-wrap gap-x-6 gap-y-2 font-bold" aria-label={dict.site.brand}>
@@ -25,7 +22,6 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             <Link href={localePath(locale, "preorder")} className="text-white/90 hover:text-sun">{dict.nav.preorder}</Link>
             <Link href={localePath(locale, "privacy")} className="text-white/90 hover:text-sun">{dict.footer.privacy}</Link>
           </nav>
-          <WhatsAppLink locale={locale} label={dict.footer.whatsapp} className="mt-5" />
         </div>
         <div className="rounded-3xl bg-white px-6 py-5 text-ink shadow-lift">
           <p className="font-display flex items-center gap-3 text-xl leading-tight">

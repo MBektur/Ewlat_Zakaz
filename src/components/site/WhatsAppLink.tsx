@@ -7,20 +7,20 @@ type Props = {
   label: string;
   /** Hazır yazılı mesaj (verilmezse dile göre varsayılan kullanılır). */
   message?: string;
-  className?: string;
 };
 
-/** WhatsApp'ta sohbet açan bağlantı (click to chat). */
-export function WhatsAppLink({ locale, label, message, className = "" }: Props) {
+/** Sağ altta (RTL'de sol altta) sabit duran WhatsApp butonu: tıklayınca sohbet açılır (click to chat). */
+export function WhatsAppFloat({ locale, label, message }: Props) {
   return (
     <a
       href={whatsappUrl(locale, message)}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-bold text-white shadow-soft transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366] ${className}`}
+      aria-label={label}
+      title={label}
+      className="fixed bottom-4 end-4 z-40 flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lift transition hover:scale-105 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366] sm:bottom-6 sm:end-6"
     >
-      <MessageCircle className="size-5 shrink-0" aria-hidden="true" />
-      {label}
+      <MessageCircle className="size-7" aria-hidden="true" fill="currentColor" strokeWidth={0} />
     </a>
   );
 }
